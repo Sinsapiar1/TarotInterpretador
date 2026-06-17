@@ -13,8 +13,11 @@ function isAuthError(msg) {
   return msg.includes('API_KEY_INVALID') || msg.includes('401') || msg.includes('403')
 }
 
-function isQuotaError(msg) {
-  return msg.includes('429') || msg.includes('quota') || msg.includes('RESOURCE_EXHAUSTED')
+function isSkippableError(msg) {
+  return (
+    msg.includes('429') || msg.includes('quota') || msg.includes('RESOURCE_EXHAUSTED') ||
+    msg.includes('404') || msg.includes('is not found') || msg.includes('not supported')
+  )
 }
 
 // Tries primaryModelId first; on quota (429) falls through to other models automatically.
@@ -32,7 +35,7 @@ async function callWithFallback(apiKey, primaryModelId, callFn) {
       if (isAuthError(msg)) {
         throw new Error('API key inválida. Verifica que sea correcta en Google AI Studio.')
       }
-      if (isQuotaError(msg)) continue  // try next model
+      if (isSkippableError(msg)) continue  // quota exhausted or model unavailable: try next
       throw err  // unexpected error — bubble up
     }
   }

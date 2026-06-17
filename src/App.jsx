@@ -39,6 +39,7 @@ export default function App() {
   const [selectedSpread, setSelectedSpread] = useState(null)
   const [readingData, setReadingData] = useState(null)   // { question, imageFile, imagePreview }
   const [identifiedCards, setIdentifiedCards] = useState(null)
+  const [validatedCards, setValidatedCards] = useState(null)
   const [interpretation, setInterpretation] = useState('')
   const [loadingMsg, setLoadingMsg] = useState('')
   const [error, setError] = useState(null)
@@ -86,6 +87,7 @@ export default function App() {
 
   // Step 2: user confirms/edits cards → interpret
   async function handleValidationConfirmed(validatedCards) {
+    setValidatedCards(validatedCards)
     setError(null)
     setStage(STAGES.LOADING_INTERPRET)
 
@@ -172,10 +174,12 @@ export default function App() {
             question={readingData?.question}
             interpretation={interpretation}
             imagePreview={readingData?.imagePreview}
+            validatedCards={validatedCards}
             onReset={() => setStage(STAGES.SELECT)}
             onNewReading={() => {
               setReadingData(null)
               setIdentifiedCards(null)
+              setValidatedCards(null)
               setInterpretation('')
               setStage(STAGES.FORM)
             }}

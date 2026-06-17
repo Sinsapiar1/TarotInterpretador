@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { downloadReadingHTML } from '../utils/exportHtml'
 
 // Parse the markdown from Gemini into structured sections
 function parseInterpretation(text) {
@@ -96,10 +97,17 @@ function ContentBlock({ lines }) {
   )
 }
 
-export default function InterpretationResult({ spread, question, interpretation, imagePreview, onReset, onNewReading }) {
+export default function InterpretationResult({ spread, question, interpretation, imagePreview, validatedCards, onReset, onNewReading }) {
   const [copied, setCopied] = useState(false)
+  const [exported, setExported] = useState(false)
   const [showImage, setShowImage] = useState(false)
   const sections = parseInterpretation(interpretation)
+
+  function handleExport() {
+    downloadReadingHTML({ spread, question, interpretation, validatedCards })
+    setExported(true)
+    setTimeout(() => setExported(false), 3000)
+  }
 
   function handleCopy() {
     navigator.clipboard.writeText(
@@ -300,13 +308,36 @@ export default function InterpretationResult({ spread, question, interpretation,
         {/* Action buttons */}
         <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '3rem' }}>
           <button
+            onClick={handleExport}
+            style={{
+              padding: '0.75rem 1.5rem',
+              background: exported
+                ? 'linear-gradient(135deg, rgba(201,162,39,0.18), rgba(201,162,39,0.08))'
+                : 'rgba(17,0,37,0.9)',
+              border: `1px solid ${exported ? 'rgba(201,162,39,0.7)' : 'rgba(201,162,39,0.42)'}`,
+              borderRadius: '0.5rem',
+              color: exported ? '#e8c84a' : '#c9a227',
+              fontFamily: 'Cinzel, serif',
+              fontSize: '0.82rem',
+              cursor: 'pointer',
+              transition: 'all 0.3s',
+              letterSpacing: '0.05em',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.45rem',
+            }}
+          >
+            {exported ? '✦ Descargado' : '⬇ Exportar HTML'}
+          </button>
+
+          <button
             onClick={handleCopy}
             style={{
               padding: '0.75rem 1.5rem',
               background: 'rgba(17,0,37,0.9)',
-              border: '1px solid rgba(201,162,39,0.3)',
+              border: '1px solid rgba(201,162,39,0.22)',
               borderRadius: '0.5rem',
-              color: copied ? '#c9a227' : 'rgba(232,213,183,0.6)',
+              color: copied ? '#c9a227' : 'rgba(232,213,183,0.5)',
               fontFamily: 'Cinzel, serif',
               fontSize: '0.82rem',
               cursor: 'pointer',
@@ -314,7 +345,7 @@ export default function InterpretationResult({ spread, question, interpretation,
               letterSpacing: '0.05em',
             }}
           >
-            {copied ? '✦ Copiado' : '◈ Copiar Lectura'}
+            {copied ? '✦ Copiado' : '◈ Copiar Texto'}
           </button>
 
           <button

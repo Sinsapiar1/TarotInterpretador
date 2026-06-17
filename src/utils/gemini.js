@@ -95,23 +95,26 @@ function fileToBase64(file) {
 export async function identifyCards({ apiKey, workingIds, spread, imageFile }) {
   const positionsList = [...spread.positions]
     .sort((a, b) => a.num - b.num)
-    .map(p => `${p.num}. ${p.label}`)
+    .map(p => `${p.num}. ${p.label}${p.placement ? ` [${p.placement}]` : ''}`)
     .join('\n')
 
   const prompt = `Eres un experto en el Mazo Rider-Waite-Smith con 35 años de experiencia. Tu única tarea ahora es IDENTIFICAR las cartas visibles en la foto, no interpretar nada todavía.
 
 TIRADA: ${spread.name} — ${spread.cards} cartas
-POSICIONES:
+
+POSICIONES Y SU UBICACIÓN FÍSICA EN LA MESA:
 ${positionsList}
 
-INSTRUCCIONES:
-- Examina la foto con mucha atención.
-- Identifica cada carta por su posición en el layout de la tirada (de izquierda a derecha, de arriba a abajo, según el orden numérico).
-- Para cada posición, indica el nombre completo de la carta en español del Rider-Waite.
-- Indica si está DERECHA (upright, orientación normal) o INVERTIDA (reversed, al revés).
-- Si no puedes ver claramente una carta, escribe "No identificada".
+INSTRUCCIONES CRÍTICAS:
+- Cada posición tiene entre corchetes su ubicación exacta en la mesa (ej: [Centro de la mesa], [A la izquierda], [Columna derecha, posición 1 abajo], etc.).
+- USA esas descripciones físicas para localizar visualmente cada carta en la foto.
+- Por ejemplo: si la posición 1 dice [Centro de la mesa], busca la carta que está en el centro de la imagen.
+- Si la posición 2 dice [Sobre la carta 1, HORIZONTAL cruzándola], busca la carta girada horizontalmente encima de la central.
+- Identifica el nombre completo de cada carta en español del Mazo Rider-Waite.
+- Indica si está DERECHA (orientación normal) o INVERTIDA (al revés, cabeza abajo).
+- Si no puedes ver claramente una carta en esa posición, escribe "No identificada".
 
-RESPONDE EXACTAMENTE en este formato, sin texto adicional, sin explicaciones:
+RESPONDE EXACTAMENTE en este formato, sin texto adicional:
 1: Nombre de la carta (DERECHA)
 2: Nombre de la carta (INVERTIDA)
 ...y así para cada posición.`

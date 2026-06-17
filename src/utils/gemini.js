@@ -9,6 +9,42 @@ const VISION_MODELS = [
   { id: 'gemini-1.5-flash', label: 'Gemini 1.5 Flash', tier: 'fast' },
 ]
 
+function isAuthError(msg) {
+  return msg.includes('API_KEY_INVALID') || msg.includes('401') || msg.includes('403')
+}
+
+function isQuotaError(msg) {
+  return msg.includes('429') || msg.includes('quota') || msg.includes('RESOURCE_EXHAUSTED')
+}
+
+// Tries primaryModelId first; on quota (429) falls through to other models automatically.
+async function callWithFallback(apiKey, primaryModelId, callFn) {
+  const orderedIds = [
+    primaryModelId,
+    ...VISION_MODELS.map(m => m.id).filter(id => id !== primaryModelId),
+  ]
+
+  for (const modelId of orderedIds) {
+    try {
+      return await callFn(new GoogleGenerativeAI(apiKey).getGenerativeModel({ model: modelId }))
+    } catch (err) {
+      const msg = err?.message || ''
+      if (isAuthError(msg)) {
+        throw new Error('API key inválida. Verifica que sea correcta en Google AI Studio.')
+      }
+      if (isQuotaError(msg)) continue  // try next model
+      throw err  // unexpected error — bubble up
+    }
+  }
+
+  throw new Error(
+    'Cuota diaria agotada en todos los modelos disponibles.\n\n' +
+    'El plan gratuito de Gemini permite ~20 peticiones/día por modelo. ' +
+    'Puedes esperar hasta mañana o activar facturación en Google AI Studio ' +
+    'para obtener límites mucho más altos.'
+  )
+}
+
 export async function detectBestModel(apiKey) {
   const genAI = new GoogleGenerativeAI(apiKey)
   for (const modelInfo of VISION_MODELS) {
@@ -18,10 +54,10 @@ export async function detectBestModel(apiKey) {
       return { ...modelInfo, valid: true }
     } catch (err) {
       const msg = err?.message || ''
-      if (msg.includes('API_KEY_INVALID') || msg.includes('401') || msg.includes('403')) {
+      if (isAuthError(msg)) {
         throw new Error('API key inválida. Verifica que sea correcta en Google AI Studio.')
       }
-      continue
+      continue  // quota errors or not-found: try next
     }
   }
   throw new Error('No se encontró ningún modelo Gemini compatible con visión para esta API key.')
@@ -37,11 +73,7 @@ function fileToBase64(file) {
 }
 
 // ─── PASO 1: identificar cartas desde la foto ────────────────────────────────
-// Returns array of { num, label, card, reversed }
 export async function identifyCards({ apiKey, modelId, spread, imageFile }) {
-  const genAI = new GoogleGenerativeAI(apiKey)
-  const model = genAI.getGenerativeModel({ model: modelId })
-
   const positionsList = [...spread.positions]
     .sort((a, b) => a.num - b.num)
     .map(p => `${p.num}. ${p.label}`)
@@ -65,25 +97,26 @@ RESPONDE EXACTAMENTE en este formato, sin texto adicional, sin explicaciones:
 2: Nombre de la carta (INVERTIDA)
 ...y así para cada posición.`
 
-  const parts = [{ text: prompt }]
-
-  if (imageFile) {
-    const base64Data = await fileToBase64(imageFile)
-    parts.push({ inlineData: { mimeType: imageFile.type, data: base64Data } })
-    parts.push({ text: 'Analiza la foto y responde con el formato indicado.' })
-  } else {
-    // No image — return placeholder entries so the validator can be shown
+  if (!imageFile) {
     return spread.positions
       .sort((a, b) => a.num - b.num)
       .map(p => ({ num: p.num, label: p.label, card: 'Sin imagen', reversed: false }))
   }
 
-  const result = await model.generateContent({
-    contents: [{ role: 'user', parts }],
-    generationConfig: { temperature: 0.2, maxOutputTokens: 1024 },
-  })
+  const base64Data = await fileToBase64(imageFile)
+  const parts = [
+    { text: prompt },
+    { inlineData: { mimeType: imageFile.type, data: base64Data } },
+    { text: 'Analiza la foto y responde con el formato indicado.' },
+  ]
 
-  const text = result.response.text().trim()
+  const text = await callWithFallback(apiKey, modelId, model =>
+    model.generateContent({
+      contents: [{ role: 'user', parts }],
+      generationConfig: { temperature: 0.2, maxOutputTokens: 1024 },
+    }).then(r => r.response.text().trim())
+  )
+
   return parseIdentifiedCards(text, spread)
 }
 
@@ -117,10 +150,7 @@ function parseIdentifiedCards(text, spread) {
 }
 
 // ─── PASO 2: interpretación completa con cartas validadas ────────────────────
-// validatedCards: array de { num, label, card, reversed } ya confirmados por el usuario
 export async function interpretReading({ apiKey, modelId, spread, question, imageFile, validatedCards }) {
-  const genAI = new GoogleGenerativeAI(apiKey)
-  const model = genAI.getGenerativeModel({ model: modelId })
 
   const spreadPositionsText = spread.positions
     .sort((a, b) => a.num - b.num)
@@ -201,10 +231,10 @@ FORMATO DE RESPUESTA:
     })
   }
 
-  const result = await model.generateContent({
-    contents: [{ role: 'user', parts }],
-    generationConfig: { temperature: 0.85, topP: 0.95, maxOutputTokens: 8192 },
-  })
-
-  return result.response.text()
+  return callWithFallback(apiKey, modelId, model =>
+    model.generateContent({
+      contents: [{ role: 'user', parts }],
+      generationConfig: { temperature: 0.85, topP: 0.95, maxOutputTokens: 8192 },
+    }).then(r => r.response.text())
+  )
 }

@@ -71,7 +71,7 @@ export default function App() {
     try {
       const cards = await identifyCards({
         apiKey: session.apiKey,
-        modelId: session.model.id,
+        workingIds: session.model.workingIds,
         spread: selectedSpread,
         imageFile,
       })
@@ -101,7 +101,7 @@ export default function App() {
     try {
       const result = await interpretReading({
         apiKey: session.apiKey,
-        modelId: session.model.id,
+        workingIds: session.model.workingIds,
         spread: selectedSpread,
         question: readingData.question,
         imageFile: readingData.imageFile,

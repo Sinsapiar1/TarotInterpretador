@@ -16,18 +16,17 @@ function isAuthError(msg) {
 function isSkippableError(msg) {
   return (
     msg.includes('429') || msg.includes('quota') || msg.includes('RESOURCE_EXHAUSTED') ||
-    msg.includes('404') || msg.includes('is not found') || msg.includes('not supported')
+    msg.includes('404') || msg.includes('is not found') || msg.includes('not supported') ||
+    msg.includes('503') || msg.includes('high demand') || msg.includes('overloaded') ||
+    msg.includes('UNAVAILABLE') || msg.includes('try again later')
   )
 }
 
-// Tries primaryModelId first; on quota (429) falls through to other models automatically.
-async function callWithFallback(apiKey, primaryModelId, callFn) {
-  const orderedIds = [
-    primaryModelId,
-    ...VISION_MODELS.map(m => m.id).filter(id => id !== primaryModelId),
-  ]
+// Uses the pre-validated workingIds list from detectBestModel; falls back through each in order.
+async function callWithFallback(apiKey, workingIds, callFn) {
+  const ids = workingIds?.length ? workingIds : VISION_MODELS.map(m => m.id)
 
-  for (const modelId of orderedIds) {
+  for (const modelId of ids) {
     try {
       return await callFn(new GoogleGenerativeAI(apiKey).getGenerativeModel({ model: modelId }))
     } catch (err) {
@@ -35,35 +34,52 @@ async function callWithFallback(apiKey, primaryModelId, callFn) {
       if (isAuthError(msg)) {
         throw new Error('API key inválida. Verifica que sea correcta en Google AI Studio.')
       }
-      if (isSkippableError(msg)) continue  // quota exhausted or model unavailable: try next
-      throw err  // unexpected error — bubble up
+      if (isSkippableError(msg)) continue
+      throw err
     }
   }
 
   throw new Error(
-    'Cuota diaria agotada en todos los modelos disponibles.\n\n' +
-    'El plan gratuito de Gemini permite ~20 peticiones/día por modelo. ' +
-    'Puedes esperar hasta mañana o activar facturación en Google AI Studio ' +
-    'para obtener límites mucho más altos.'
+    'Todos los modelos de Gemini están saturados o con cuota agotada en este momento.\n\n' +
+    '• Plan gratuito: ~20 peticiones/día por modelo. Espera unas horas o prueba mañana.\n' +
+    '• Error 503: los servidores de Google están con alta demanda. Intenta de nuevo en 1-2 minutos.\n' +
+    '• Para uso sin límites: activa facturación en aistudio.google.com'
   )
 }
 
+// Scans all models at startup and returns the best one + the full ordered working list.
+// This way readings always use models verified at connection time.
 export async function detectBestModel(apiKey) {
   const genAI = new GoogleGenerativeAI(apiKey)
+  const workingIds = []
+  let bestModel = null
+
   for (const modelInfo of VISION_MODELS) {
     try {
       const model = genAI.getGenerativeModel({ model: modelInfo.id })
       await model.generateContent({ contents: [{ role: 'user', parts: [{ text: 'Hi' }] }] })
-      return { ...modelInfo, valid: true }
+      workingIds.push(modelInfo.id)
+      if (!bestModel) bestModel = modelInfo
     } catch (err) {
       const msg = err?.message || ''
       if (isAuthError(msg)) {
         throw new Error('API key inválida. Verifica que sea correcta en Google AI Studio.')
       }
-      continue  // quota errors or not-found: try next
+      // quota / not-found / 503 / other: skip this model, continue scanning
     }
   }
-  throw new Error('No se encontró ningún modelo Gemini compatible con visión para esta API key.')
+
+  if (!bestModel) {
+    throw new Error(
+      'No se pudo conectar con ningún modelo de Gemini.\n\n' +
+      'Posibles causas:\n' +
+      '• Cuota del día agotada (plan gratuito: ~20 req/día). Intenta mañana.\n' +
+      '• Servidores con alta demanda (error 503). Intenta en unos minutos.\n' +
+      '• API key incorrecta o sin permisos.'
+    )
+  }
+
+  return { ...bestModel, valid: true, workingIds }
 }
 
 function fileToBase64(file) {
@@ -76,7 +92,7 @@ function fileToBase64(file) {
 }
 
 // ─── PASO 1: identificar cartas desde la foto ────────────────────────────────
-export async function identifyCards({ apiKey, modelId, spread, imageFile }) {
+export async function identifyCards({ apiKey, workingIds, spread, imageFile }) {
   const positionsList = [...spread.positions]
     .sort((a, b) => a.num - b.num)
     .map(p => `${p.num}. ${p.label}`)
@@ -113,7 +129,7 @@ RESPONDE EXACTAMENTE en este formato, sin texto adicional, sin explicaciones:
     { text: 'Analiza la foto y responde con el formato indicado.' },
   ]
 
-  const text = await callWithFallback(apiKey, modelId, model =>
+  const text = await callWithFallback(apiKey, workingIds, model =>
     model.generateContent({
       contents: [{ role: 'user', parts }],
       generationConfig: { temperature: 0.2, maxOutputTokens: 1024 },
@@ -153,7 +169,7 @@ function parseIdentifiedCards(text, spread) {
 }
 
 // ─── PASO 2: interpretación completa con cartas validadas ────────────────────
-export async function interpretReading({ apiKey, modelId, spread, question, imageFile, validatedCards }) {
+export async function interpretReading({ apiKey, workingIds, spread, question, imageFile, validatedCards }) {
 
   const spreadPositionsText = spread.positions
     .sort((a, b) => a.num - b.num)
@@ -234,7 +250,7 @@ FORMATO DE RESPUESTA:
     })
   }
 
-  return callWithFallback(apiKey, modelId, model =>
+  return callWithFallback(apiKey, workingIds, model =>
     model.generateContent({
       contents: [{ role: 'user', parts }],
       generationConfig: { temperature: 0.85, topP: 0.95, maxOutputTokens: 8192 },

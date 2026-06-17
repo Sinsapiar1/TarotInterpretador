@@ -90,11 +90,11 @@ function buildCardsTable(validatedCards, positions) {
     .map(card => {
       const pos = positions.find(p => p.num === card.num)
       const posLabel = pos ? escHtml(pos.label) : `Posición ${card.num}`
-      const inv = card.orientation === 'INVERTIDA'
+      const inv = card.reversed === true
       return `<tr>
         <td class="num-cell">${card.num}</td>
         <td>${posLabel}</td>
-        <td><strong>${escHtml(card.name)}</strong></td>
+        <td><strong>${escHtml(card.card)}</strong></td>
         <td><span class="ori-badge ${inv ? 'inv' : 'der'}">${inv ? '↶ INVERTIDA' : '↑ DERECHA'}</span></td>
       </tr>`
     }).join('\n')

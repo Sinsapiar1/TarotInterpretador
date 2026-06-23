@@ -98,13 +98,17 @@ export async function identifyCards({ apiKey, workingIds, spread, imageFile }) {
     .map(p => `${p.num}. ${p.label}${p.placement ? ` [${p.placement}]` : ''}`)
     .join('\n')
 
+  const layoutNote = spread.layoutNote
+    ? `\nNOTA VISUAL DEL LAYOUT (fundamental para localizar cada carta correctamente):\n${spread.layoutNote}\n`
+    : ''
+
   const prompt = `Eres un experto en el Mazo Rider-Waite-Smith con 35 años de experiencia. Tu única tarea ahora es IDENTIFICAR las cartas visibles en la foto, no interpretar nada todavía.
 
 TIRADA: ${spread.name} — ${spread.cards} cartas
 
 POSICIONES Y SU UBICACIÓN FÍSICA EN LA MESA:
 ${positionsList}
-
+${layoutNote}
 INSTRUCCIONES CRÍTICAS:
 - Cada posición tiene entre corchetes su ubicación exacta en la mesa (ej: [Centro de la mesa], [A la izquierda], [Columna derecha, posición 1 abajo], etc.).
 - USA esas descripciones físicas para localizar visualmente cada carta en la foto.
@@ -189,6 +193,10 @@ export async function interpretReading({ apiKey, workingIds, spread, question, i
       `\n\nIMPORTANTE: Las cartas ya están verificadas por el consultante. NO uses la imagen para re-identificarlas. Usa la imagen solo como referencia visual adicional del layout.\n`
     : ''
 
+  const interpretationContextSection = spread.interpretationContext
+    ? `\nFILOSOFÍA Y CLAVES DE INTERPRETACIÓN — OBLIGATORIO (aplica estos principios en cada posición para una lectura auténtica):\n${spread.interpretationContext}\n`
+    : ''
+
   const systemPrompt = `Eres un maestro tarotista con 35 años de experiencia interpretando el Mazo Rider-Waite-Smith. Tu conocimiento abarca la simbología esotérica profunda, la psicología junguiana aplicada al tarot, la kábala, la numerología, la astrología y la alquimia. Interpretas con la precisión de un académico y la sabiduría de un guía espiritual.
 
 TIRADA SELECCIONADA: ${spread.name} (${spread.subtitle})
@@ -197,13 +205,13 @@ NÚMERO DE CARTAS: ${spread.cards}
 
 POSICIONES DE LA TIRADA:
 ${spreadPositionsText}
-${confirmedSection}
+${confirmedSection}${interpretationContextSection}
 PREGUNTA DEL CONSULTANTE: "${question}"
 
 INSTRUCCIONES PARA LA INTERPRETACIÓN:
 1. ${validatedCards ? 'Usa las cartas confirmadas listadas arriba (ya verificadas por el consultante).' : 'Identifica cada carta visible del Rider-Waite en la foto, su nombre y orientación.'}
 2. Para cada carta, considera su simbolismo profundo — colores, figuras, números, elementos — en el Rider-Waite.
-3. Para cada posición interpreta:
+3. Para cada posición interpreta:${interpretationContextSection ? '\n   - APLICA los principios filosóficos de esta tirada indicados arriba — son determinantes para una lectura correcta y auténtica.' : ''}
    - Si la carta está INVERTIDA: la energía está bloqueada, interiorizada o se manifiesta en su sombra.
    - El simbolismo central de la carta en el contexto específico de esa posición.
    - La conexión directa con la pregunta del consultante.

@@ -36,8 +36,8 @@ export default function SpreadSelector({ onSelect, modelInfo }) {
           Elige tu Tirada
         </h2>
         <div style={{ margin: '1rem auto', width: '150px', height: '1px', background: 'linear-gradient(90deg, transparent, #c9a227, transparent)' }} />
-        <p style={{ fontFamily: 'EB Garamond, serif', fontSize: '1.05rem', color: 'rgba(232,213,183,0.55)', maxWidth: '500px', margin: '0 auto' }}>
-          25 tiradas certificadas de las tradiciones esotéricas más importantes. Cada una diseñada para revelar una dimensión específica de tu realidad.
+        <p style={{ fontFamily: 'EB Garamond, serif', fontSize: '1.05rem', color: 'rgba(232,213,183,0.55)', maxWidth: '520px', margin: '0 auto' }}>
+          35 tiradas de las tradiciones esotéricas más importantes, incluyendo las 10 tiradas del libro oficial <em>Tarot de A.E. Waite</em> de Fiebig &amp; Bürger.
         </p>
 
         {/* Model badge */}
@@ -137,6 +137,21 @@ export default function SpreadSelector({ onSelect, modelInfo }) {
                         {spread.name}
                       </h3>
                     </div>
+                    {spread.category === 'fiebig' && (
+                      <div style={{
+                        display: 'inline-flex', alignItems: 'center', gap: '0.3rem',
+                        padding: '0.15rem 0.5rem',
+                        background: 'rgba(107,33,168,0.12)',
+                        border: '1px solid rgba(196,176,216,0.2)',
+                        borderRadius: '999px',
+                        marginBottom: '0.25rem',
+                      }}>
+                        <span style={{ fontSize: '0.65rem' }}>📖</span>
+                        <span style={{ fontFamily: 'Cinzel, serif', fontSize: '0.58rem', color: 'rgba(196,176,216,0.7)', letterSpacing: '0.06em' }}>
+                          FIEBIG · BÜRGER
+                        </span>
+                      </div>
+                    )}
                     <p style={{ fontFamily: 'EB Garamond, serif', fontSize: '0.85rem', color: 'rgba(201,162,39,0.7)', lineHeight: 1.3 }}>
                       {spread.subtitle}
                     </p>

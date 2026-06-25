@@ -5,6 +5,7 @@ export const SPREAD_CATEGORIES = [
   { id: 'espiritualidad', label: 'Espiritualidad & Alma' },
   { id: 'situacional', label: 'Situacional & Decisiones' },
   { id: 'fiebig', label: 'Método Fiebig · Bürger' },
+  { id: 'tres_col', label: 'Colección · 25 Tiradas de 3 Cartas' },
 
 ]
 // Each position has:
@@ -27,6 +28,7 @@ export const SPREADS = [
     guide: 'Coloca una sola carta boca abajo en el centro. Concéntrate en tu pregunta y voltéala.',
     description: 'La consulta más directa del tarot. Una sola carta actúa como oráculo, revelando la esencia de la situación, la respuesta a una pregunta concreta o el mensaje que el universo tiene para ti en este momento.',
     whenToUse: 'Para preguntas de sí/no, para recibir un mensaje diario o cuando necesitas claridad inmediata sobre un punto específico sin análisis profundo.',
+    interpretationContext: `Una sola carta contiene la respuesta completa. No hay más posiciones.\n• Posición 1 — El Mensaje del Oráculo: analiza TODOS los elementos de la carta: figura central, colores dominantes, número, símbolo principal, elementos (fuego/agua/aire/tierra), expresión facial y postura corporal de los personajes. Arcanos Mayores = mensaje arquetípico o situación importante. Arcanos Menores = situación práctica del ámbito de ese palo. Carta INVERTIDA = la energía está bloqueada, interiorizada o se expresa en su aspecto sombra. La carta ES la respuesta — no adornes ni rodees, ve directo al mensaje.`,
     positions: [
       { num: 1, label: 'El Mensaje del Oráculo', x: 50, y: 50, w: 18, h: 28,
         placement: 'Centro de la mesa, vertical' },
@@ -44,6 +46,7 @@ export const SPREADS = [
     guide: 'Coloca las 3 cartas en fila horizontal de izquierda a derecha: la primera es el pasado, la del centro el presente, la de la derecha el futuro.',
     description: 'La tirada de tres cartas es el pilar fundamental del tarot occidental. Revela el hilo narrativo de una situación mostrando de dónde vienes (el pasado que influye), dónde estás ahora (la energía presente) y hacia dónde te diriges (la tendencia del futuro).',
     whenToUse: 'Para entender la evolución de cualquier situación, para ver causas y efectos, o cuando necesitas una visión completa pero concisa de un tema.',
+    interpretationContext: `Línea temporal de izquierda a derecha. Las tres cartas forman una narrativa causa-estado-tendencia.\n• Posición 1 — El Pasado / La Causa (izquierda): NO es simplemente algo que ya ocurrió. Es la fuerza, patrón o evento del pasado que SIGUE ACTIVO y genera la situación presente. La causa real de lo que está pasando.\n• Posición 2 — El Presente / La Realidad (centro): el estado actual tal como ES, sin filtros ni proyecciones. La energía viva en este momento.\n• Posición 3 — El Futuro / La Tendencia (derecha): NO es un futuro determinado. Es la TENDENCIA hacia donde se dirige la energía si las cosas continúan como están. Puede modificarse con nuevas decisiones y acciones.`,
     positions: [
       { num: 1, label: 'El Pasado (Causa)', x: 20, y: 50, w: 16, h: 25,
         placement: 'Izquierda de la fila' },
@@ -65,6 +68,7 @@ export const SPREADS = [
     guide: 'Coloca las cartas 1 a 5 formando un arco de herradura: la 1 abajo a la izquierda, subiendo hasta la 3 en la cima, bajando a la 5 abajo a la derecha. Las cartas 6 y 7 van dentro del arco en la parte inferior, como el "interior" de la herradura.',
     description: 'Una de las tiradas más equilibradas y completas del tarot clásico. Toma la forma de una herradura (símbolo de buena suerte) y ofrece una panorámica profunda de la situación: sus raíces en el pasado, las influencias externas, los obstáculos, las esperanzas y el desenlace probable.',
     whenToUse: 'Para situaciones en desarrollo activo, cuando quieres entender todos los factores que influyen en un resultado y cuándo hay obstáculos que identificar claramente.',
+    interpretationContext: `Arco de herradura de 7 cartas. El arco exterior va de abajo-izquierda, sube hasta la cima y baja a abajo-derecha. Dentro del arco hay 2 cartas.\n• Posición 1 — El Pasado Lejano (abajo izquierda del arco): la fuerza que viene de lejos en el tiempo y sigue actuando como trasfondo.\n• Posición 2 — El Pasado Reciente (lateral izquierdo del arco): lo que acaba de influir en la situación, causa más inmediata.\n• Posición 3 — El Presente (cima del arco): el estado actual en su punto más visible y activo.\n• Posición 4 — El Futuro Inmediato (lateral derecho del arco): lo que se aproxima en días o semanas.\n• Posición 5 — El Futuro Lejano (abajo derecha del arco): la tendencia a medio o largo plazo.\n• Posición 6 — Los Obstáculos (interior izquierdo del arco, abajo): lo que frena, bloquea o complica el camino.\n• Posición 7 — El Resultado Final (interior derecho del arco, abajo): el desenlace probable si las fuerzas actuales continúan.`,
     positions: [
       { num: 1, label: 'El Pasado Lejano',     x: 10, y: 68, w: 14, h: 22,
         placement: 'Extremo inferior izquierdo del arco — inicio de la herradura' },
@@ -96,6 +100,7 @@ export const SPREADS = [
     guide: 'Forma una cruz en el centro con las cartas 1 a 6: la 1 en el centro, la 2 HORIZONTAL sobre ella cruzándola, la 3 arriba, la 4 abajo, la 5 a la izquierda y la 6 a la derecha. Luego forma una columna vertical a la derecha (el "báculo") con las cartas 7 a 10 de abajo hacia arriba.',
     description: 'La tirada más completa, reconocida y utilizada en el mundo del tarot. Originada en las tradiciones celtas y popularizada por la Orden Hermética del Alba Dorada, la Cruz Celta ofrece un mapa exhaustivo de cualquier situación: sus causas profundas, las fuerzas cruzadas, el ambiente, las esperanzas, los miedos y el desenlace final.',
     whenToUse: 'Para preguntas importantes de vida, cuando la situación es compleja con múltiples factores, cuando necesitas el análisis más completo y exhaustivo posible.',
+    interpretationContext: `Cruz Celta estándar de 10 cartas — significados clásicos del método Waite/GD.\nLA CRUZ (6 cartas centrales):\n• Posición 1 — El Corazón (centro): la esencia y tema central de la situación.\n• Posición 2 — El Cruce (sobre la 1, HORIZONTAL): la carta está colocada HORIZONTALMENTE cruzando la carta 1. Lo que obstaculiza, cruza o complica. Se interpreta tanto derecha como invertida según corresponda.\n• Posición 3 — La Corona (arriba): el objetivo consciente, lo que el consultante aspira o piensa sobre la situación.\n• Posición 4 — La Raíz (abajo): el fundamento inconsciente, la causa profunda que no siempre el consultante reconoce.\n• Posición 5 — El Pasado (izquierda): la influencia que ya se aleja, lo que está quedando atrás.\n• Posición 6 — El Futuro Próximo (derecha): la influencia que se acerca, lo que viene a continuación.\nEL BÁCULO (columna derecha, de abajo hacia arriba):\n• Posición 7 — El Consultante: la actitud, perspectiva y posición del consultante ante la situación.\n• Posición 8 — El Entorno: las influencias externas, el ambiente y lo que dicen o piensan los demás.\n• Posición 9 — Esperanzas y Miedos: lo que el consultante desea y teme simultáneamente — la misma carta contiene ambos.\n• Posición 10 — El Resultado Final (cima del báculo): el desenlace probable hacia el que apunta todo el conjunto.`,
     positions: [
       // ── La Cruz (centro izquierdo) ──
       { num: 1, label: 'El Corazón — Situación Central', x: 36, y: 48, w: 13, h: 21,
@@ -133,6 +138,7 @@ export const SPREADS = [
     guide: 'Coloca las cartas siguiendo el patrón del Árbol de la Vida: la 1 en la cima, las 2 y 3 en el segundo nivel (izquierda y derecha), las 4, 5 y 6 en el tercero, las 7, 8 y 9 en el cuarto, y la 10 en la base.',
     description: 'Basada en las diez Sephiroth del Árbol de la Vida cabalístico. Cada posición corresponde a una esfera de existencia: desde Kether (la corona divina) hasta Malkuth (el reino material).',
     whenToUse: 'Para introspección espiritual profunda, para entender el propósito del alma, cuando las preguntas van más allá de lo mundano.',
+    interpretationContext: `Árbol de la Vida cabalístico — 10 Sephiroth siguiendo el rayo del relámpago. Lee en este orden de importancia espiritual descendente:\n• Posición 1 — Kether (cima central): el propósito más elevado y divino. Lo que existe en su forma más pura y esencial.\n• Posición 2 — Chokmah (derecha alta): la sabiduría activa y masculina. La fuerza expansiva disponible.\n• Posición 3 — Binah (izquierda alta): la comprensión receptiva y femenina. La forma que contiene y da estructura.\n• Posición 4 — Chesed (derecha media): la misericordia, abundancia y lo que se expande positivamente.\n• Posición 5 — Geburah (izquierda media): la fuerza, disciplina y lo que debe ser eliminado o purificado.\n• Posición 6 — Tiphareth (centro medio): la armonía y el corazón. El Yo Superior. El punto de integración.\n• Posición 7 — Netzach (derecha baja): las emociones, deseos, creatividad e impulso vital.\n• Posición 8 — Hod (izquierda baja): el intelecto, comunicación, lenguaje y patrones mentales.\n• Posición 9 — Yesod (centro bajo): el inconsciente, los sueños, la luna y el mundo astral.\n• Posición 10 — Malkuth (base central): la manifestación en el mundo físico y material. El resultado concreto.`,
     positions: [
       { num: 1,  label: 'Kether · Propósito Divino',  x: 50, y: 7,  w: 13, h: 19,
         placement: 'Cima, centro — la corona del árbol' },
@@ -168,6 +174,7 @@ export const SPREADS = [
     guide: 'Coloca las cartas 1 a 6 (enero a junio) en fila superior. Las cartas 7 a 12 (julio a diciembre) en fila inferior. La carta 13 (carta del año) va en el centro, entre las dos filas.',
     description: 'Las doce primeras cartas representan cada mes del año, y la decimotercera es la "carta del año" — el tema arquetípico que gobernará todo el ciclo.',
     whenToUse: 'Al inicio de un año nuevo, en tu cumpleaños, o cuando quieres una visión macro del ciclo completo.',
+    interpretationContext: `Lectura anual de 13 cartas. Layout: dos filas de 6 meses + 1 carta del año en el centro.\n• Posiciones 1 a 6 (fila SUPERIOR, de izquierda a derecha): Enero, Febrero, Marzo, Abril, Mayo, Junio.\n• Posiciones 7 a 12 (fila INFERIOR, de izquierda a derecha): Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre.\n• Posición 13 — La Carta del Año (CENTRO, entre las dos filas): el tema arquetípico rector del año completo. Esta es la carta más importante — interpreta PRIMERO la carta del año como el hilo conductor, y luego cada mes en relación a ella.\nCada carta mensual describe la energía, oportunidad o desafío predominante en ese mes específico. No es predictiva al 100% — señala la energía dominante que el consultante encontrará.`,
     positions: [
       { num: 1,  label: 'Enero',             x: 11, y: 12, w: 11, h: 17,
         placement: 'Fila superior, 1ª posición (izquierda)' },
@@ -209,6 +216,7 @@ export const SPREADS = [
     guide: 'Coloca la carta 9 en el centro. Luego coloca las cartas 1 a 8 formando un círculo alrededor, comenzando por arriba (carta 1) y siguiendo en sentido horario.',
     description: 'Una tirada circular que ofrece una visión de 360° de todos los aspectos de tu vida: identidad, emociones, mente, cuerpo, espíritu, relaciones, trabajo, hogar y propósito.',
     whenToUse: 'Para revisiones integrales de vida o en períodos de transición general.',
+    interpretationContext: `Círculo de 8 cartas + 1 carta central integradora. La carta 9 (centro) se coloca ÚLTIMA y ES el eje de toda la lectura.\n• Posición 9 — Síntesis & Mensaje Central (CENTRO): la carta más importante. Interpreta PRIMERO esta carta como el tema unificador de toda la lectura.\nCírculo exterior en sentido horario empezando desde arriba:\n• Posición 1 — Identidad & Ser (arriba, 12 en punto): quién eres en esencia.\n• Posición 2 — Emociones & Sentimientos (arriba derecha, 2 en punto): tu mundo emocional actual.\n• Posición 3 — Mente & Pensamientos (derecha, 3 en punto): tus patrones mentales y creencias.\n• Posición 4 — Cuerpo & Salud (abajo derecha, 4-5 en punto): tu estado físico y material.\n• Posición 5 — Trabajo & Propósito (abajo, 6 en punto): tu misión y actividad profesional.\n• Posición 6 — Relaciones & Vínculos (abajo izquierda, 7-8 en punto): tus conexiones y relaciones.\n• Posición 7 — Hogar & Raíces (izquierda, 9 en punto): tus raíces, familia y hogar.\n• Posición 8 — Espiritualidad (arriba izquierda, 10-11 en punto): tu vida espiritual y conexión con lo trascendente.\nCada carta exterior se lee EN RELACIÓN a la carta central (9).`,
     positions: [
       { num: 1, label: 'Identidad & Ser',           x: 50, y: 10, w: 12, h: 19,
         placement: 'Círculo exterior, posición 12 (arriba centro)' },
@@ -242,6 +250,7 @@ export const SPREADS = [
     guide: 'Coloca las 5 cartas en fila horizontal de izquierda a derecha, representando el flujo de transformación personal desde quien eres hasta quien serás.',
     description: 'Mapea el proceso de transformación personal: quién eres en esencia, qué tienes que soltar, qué estás aprendiendo, qué recursos tienes y hacia qué versión de ti mismo te mueves.',
     whenToUse: 'En momentos de cambio personal, durante crisis de crecimiento o procesos de trabajo interior.',
+    interpretationContext: `Fila de 5 cartas que mapea el proceso de transformación personal de izquierda a derecha.\n• Posición 1 — Tu Esencia Actual (extremo izquierdo): quién eres ahora mismo, antes de la transformación. El punto de partida real, sin idealizaciones.\n• Posición 2 — Lo que Debes Soltar (segunda desde la izquierda): el patrón, creencia, relación o situación que debe liberarse para que la transformación sea posible. Sin soltar esto, no hay avance.\n• Posición 3 — La Lección que Integras (centro): el aprendizaje central y esencial de este período. La enseñanza que el alma está procesando ahora.\n• Posición 4 — Tus Recursos Internos (segunda desde la derecha): las fortalezas, talentos y apoyos internos disponibles para sostener el cambio. Lo que ya tienes para el viaje.\n• Posición 5 — Tu Próxima Versión (extremo derecho): hacia dónde apunta la transformación, quién serás al otro lado del proceso.`,
     positions: [
       { num: 1, label: 'Tu Esencia Actual',     x: 12, y: 50, w: 14, h: 22,
         placement: 'Fila, 1ª posición (izquierda)' },
@@ -267,6 +276,7 @@ export const SPREADS = [
     guide: 'Coloca las 8 cartas en círculo, comenzando por la carta 1 arriba (punto más alto) y continuando en sentido horario hasta completar el círculo.',
     description: 'Analiza los ciclos de la vida: los puntos altos y bajos, las fuerzas que impulsan el cambio, las lecciones que se repiten y la dirección en que gira la rueda en este momento.',
     whenToUse: 'Cuando sientes que los mismos patrones se repiten, en momentos de grandes cambios de ciclo.',
+    interpretationContext: `Círculo de 8 cartas siguiendo el movimiento de la rueda en sentido HORARIO comenzando desde arriba (12 en punto).\n• Posición 1 — Punto Más Alto / Plenitud (arriba, 12 en punto): el momento de mayor energía, éxito y realización en este ciclo.\n• Posición 2 — Ascenso / Lo que Sube (arriba derecha, 2 en punto): la fase de crecimiento activo, lo que está subiendo y expandiéndose.\n• Posición 3 — El Presente (derecha, 3 en punto): el punto de tránsito actual, donde se está ahora en el ciclo.\n• Posición 4 — Descenso / Lo que Baja (abajo derecha, 4-5 en punto): lo que está disminuyendo, cerrándose o terminando.\n• Posición 5 — Punto Más Bajo / La Prueba (abajo, 6 en punto): el momento de mayor desafío, transformación o necesidad de soltar.\n• Posición 6 — Lo que Resurge (abajo izquierda, 7-8 en punto): lo que empieza a renacer desde el fondo, el primer brote del nuevo ciclo.\n• Posición 7 — La Fuerza Impulsora (izquierda, 9 en punto): el motor que hace girar la rueda, la energía que sostiene el ciclo.\n• Posición 8 — La Lección del Ciclo (arriba izquierda, 10-11 en punto): el aprendizaje kármico que se repite en este patrón cíclico.`,
     positions: [
       { num: 1, label: 'Punto Más Alto — Plenitud',    x: 50, y: 8,  w: 13, h: 20,
         placement: 'Posición 12 del círculo (arriba centro)' },
@@ -300,6 +310,7 @@ export const SPREADS = [
     guide: 'Carta 7 arriba en el centro (el camino de la relación). Cartas 1 y 2 debajo a ambos lados (cada persona). Cartas 5 y 6 en el centro (vínculo y desafío). Cartas 3 y 4 en la fila inferior (aportes de cada uno).',
     description: 'Analiza la dinámica relacional: energía de cada persona, sus aportes, el vínculo, el desafío y el potencial de la relación.',
     whenToUse: 'Para entender la dinámica de una relación romántica, analizar conflictos o ver el potencial de un vínculo.',
+    interpretationContext: `ATENCIÓN — posiciones no secuenciales: la carta 7 está ARRIBA aunque su número es 7. El layout es en 3 filas.\nFILA SUPERIOR: carta 7 sola en el centro.\nFILA MEDIA (de izquierda a derecha): carta 1 — carta 5 — carta 2.\nFILA INFERIOR (de izquierda a derecha): carta 3 — carta 6 — carta 4.\n• Posición 7 — El Camino de la Relación (ARRIBA CENTRO): la dirección y el potencial de la relación. Se lee PRIMERO como el punto de referencia de toda la lectura.\n• Posición 1 — Tú (fila media, izquierda): tu energía, aporte y posición en la relación ahora mismo.\n• Posición 5 — El Vínculo (fila media, centro): la energía que conecta a ambos, lo que los une.\n• Posición 2 — Tu Pareja (fila media, derecha): la energía y posición de tu pareja en la relación.\n• Posición 3 — Lo que Tú Aportas (fila inferior, izquierda): debajo de carta 1. Tu contribución real a la relación.\n• Posición 6 — El Desafío (fila inferior, centro): lo que separa, tensiona o desafía a ambos.\n• Posición 4 — Lo que Elle Aporta (fila inferior, derecha): debajo de carta 2. La contribución de tu pareja.`,
     positions: [
       { num: 7, label: 'El Camino de la Relación',          x: 50, y: 10, w: 14, h: 22,
         placement: 'Arriba centro — la dirección de la relación' },
@@ -329,6 +340,7 @@ export const SPREADS = [
     guide: 'Carta 1 arriba centro. Cartas 2 y 3 en el nivel medio (izquierda y derecha). Cartas 4 y 5 en la fila inferior.',
     description: 'Explora una conexión romántica nueva: la naturaleza del vínculo, lo que siente cada uno, el potencial real y el consejo del tarot.',
     whenToUse: 'Cuando conoces a alguien nuevo o al inicio de una relación.',
+    interpretationContext: `Tirada de 5 cartas con carta superior + 2 en nivel medio + 2 en fila inferior.\n• Posición 1 — La Naturaleza de la Conexión (arriba centro): la energía esencial que define este vínculo naciente. ¿Qué tipo de encuentro es realmente?\n• Posición 2 — Lo que Tú Sientes (nivel medio, izquierda): tus sentimientos reales hacia esta persona, incluyendo lo que no admites fácilmente.\n• Posición 3 — Lo que Elle Siente (nivel medio, derecha): los sentimientos de la otra persona. Si hay carta invertida aquí, puede indicar sentimientos no expresados o confusos.\n• Posición 4 — El Potencial Real (fila inferior, izquierda): lo que esta conexión puede llegar a ser si se cultiva con consciencia. El techo posible de esta relación.\n• Posición 5 — El Consejo del Tarot (fila inferior, derecha): la perspectiva o acción más importante que el tarot recomienda para navegar este vínculo.`,
     positions: [
       { num: 1, label: 'La Naturaleza de esta Conexión', x: 50, y: 15, w: 14, h: 22,
         placement: 'Arriba centro — la carta principal del vínculo' },
@@ -354,6 +366,7 @@ export const SPREADS = [
     guide: 'Carta 1 arriba centro. Cartas 2, 4 y 3 en el nivel medio (izquierda, centro, derecha). Cartas 5, 7 y 6 en la fila inferior.',
     description: 'Analiza honestamente las posibilidades de recuperar una relación rota: causas de la separación, sentimientos actuales, posibilidad real y obstáculos.',
     whenToUse: 'Después de una ruptura o cuando consideras retomar una relación pasada.',
+    interpretationContext: `7 cartas en pirámide invertida: 1 arriba, 3 en fila media, 3 en fila inferior.\n• Posición 1 — La Causa Real de la Separación (arriba centro): el origen verdadero del quiebre, más allá de las razones superficiales que se dieron.\n• Posición 2 — Lo que Tú Sientes Aún (fila media, izquierda): los sentimientos actuales del consultante hacia la relación. Honestidad total.\n• Posición 4 — La Posibilidad Real (fila media, centro): evaluación objetiva de si la reconciliación es viable y qué tan probable es. Puede ser dolorosa.\n• Posición 3 — Lo que Elle Siente Aún (fila media, derecha): los sentimientos actuales de la otra persona. Carta invertida = sentimientos confusos, bloqueados o no procesados.\n• Posición 5 — Lo que Necesitaría Cambiar (fila inferior, izquierda): qué debería transformarse concretamente en la dinámica para que funcione esta vez.\n• Posición 7 — El Consejo del Tarot (fila inferior, centro): la orientación más honesta y práctica del tarot sobre si seguir adelante o soltar.\n• Posición 6 — Los Obstáculos Reales (fila inferior, derecha): lo que genuinamente se interpone, incluyendo obstáculos que quizás no se quieran ver.`,
     positions: [
       { num: 1, label: 'La Causa Real de la Separación', x: 50, y: 10, w: 14, h: 22,
         placement: 'Arriba centro' },
@@ -383,6 +396,7 @@ export const SPREADS = [
     guide: 'Carta 1 arriba centro. Cartas 2 y 3 en el nivel medio. Cartas 4 y 5 en la fila inferior.',
     description: 'Explora la relación más importante: la que tienes contigo mismo. Cómo te ves, tus heridas activas, tus fortalezas, lo que necesitas sanar y tu camino hacia el amor propio.',
     whenToUse: 'Después de una ruptura, en momentos de baja autoestima, durante procesos terapéuticos.',
+    interpretationContext: `Tirada de autosanación: 1 carta arriba + 2 en nivel medio + 2 en fila inferior.\n• Posición 1 — Cómo Te Ves Ahora (arriba centro): la imagen que el consultante tiene de sí mismo/a en este momento. Puede diferir mucho de la realidad. Incluye el juicio interno y la autovaloración presente.\n• Posición 2 — Tu Herida Emocional Activa (nivel medio, izquierda): la herida más activa ahora, la que más duele o la que más sabotea. No la herida de siempre — la que ESTÁ activa en este momento.\n• Posición 3 — Tu Fortaleza Interna Real (nivel medio, derecha): el recurso interno genuino disponible. La fortaleza que el consultante tiene pero quizás no reconoce o subestima.\n• Posición 4 — Lo que Necesitas para Sanar (fila inferior, izquierda): la acción, práctica, reconocimiento o cambio que es necesario para avanzar en la sanación.\n• Posición 5 — Tu Camino hacia el Amor Propio (fila inferior, derecha): la dirección concreta y el primer paso real hacia una relación más amorosa con uno mismo/a.`,
     positions: [
       { num: 1, label: 'Cómo Te Ves a Ti Mismo/a Ahora', x: 50, y: 15, w: 14, h: 22,
         placement: 'Arriba centro' },
@@ -410,6 +424,7 @@ export const SPREADS = [
     guide: 'Coloca las 7 cartas en columna vertical. La carta 1 (Raíz) va abajo del todo y la carta 7 (Corona) arriba del todo, siguiendo el recorrido ascendente de la energía kundalini por el cuerpo.',
     description: 'Integra el tarot con el sistema de chakras. Cada carta revela el estado de uno de los siete centros energéticos, desde la raíz (tierra, supervivencia) hasta la corona (conexión divina).',
     whenToUse: 'Para diagnóstico energético personal, trabajo con el cuerpo sutil o cuando sientes desequilibrios físicos o emocionales.',
+    interpretationContext: `ATENCIÓN — posiciones no secuenciales: la carta 7 (Corona) está en la parte SUPERIOR aunque su número es 7. La columna va de arriba (7) hacia abajo (1), siguiendo el recorrido descendente del cuerpo.\nLeer de arriba hacia abajo (de corona a raíz):\n• Posición 7 — Sahasrara / Corona (ARRIBA): la conexión espiritual, conciencia superior y apertura a lo divino.\n• Posición 6 — Ajna / Tercer Ojo (segunda desde arriba): la intuición, percepción extrasensorial y claridad mental.\n• Posición 5 — Vishuddha / Garganta (tercera desde arriba): la expresión, comunicación y capacidad de decir la verdad.\n• Posición 4 — Anahata / Corazón (CENTRO): el amor, la compasión y las relaciones. El chakra puente entre lo espiritual y lo material.\n• Posición 3 — Manipura / Plexo Solar (tercera desde abajo): el poder personal, la autoestima y la voluntad.\n• Posición 2 — Svadhisthana / Sacro (segunda desde abajo): las emociones, la creatividad y la sexualidad.\n• Posición 1 — Muladhara / Raíz (ABAJO): la seguridad, supervivencia y conexión con la tierra.\nCarta INVERTIDA = chakra bloqueado o sobreactivado. Analiza el patrón general: ¿dónde está el desequilibrio? ¿Qué chakras tienen la energía más intensa vs. más débil?`,
     positions: [
       { num: 7, label: 'Sahasrara · Corona · Conciencia',      x: 50, y: 9,  w: 13, h: 18,
         placement: 'Columna, posición 1 (más arriba) — la corona' },
@@ -439,6 +454,7 @@ export const SPREADS = [
     guide: 'Carta 1 arriba centro. Cartas 2 y 3 en el nivel medio (la sombra a la izquierda, el don a la derecha). Cartas 4, 6 y 5 en la fila inferior.',
     description: 'Trabaja con los aspectos inconscientes de ti mismo. Trae a la luz los patrones reprimidos, las heridas no sanadas y los dones ocultos que viven en la Sombra.',
     whenToUse: 'Para trabajo psicológico profundo, cuando enfrentas comportamientos autosaboteadores o patrones que se repiten.',
+    interpretationContext: `Tirada jungiana en T invertida: 1 arriba + 2 en nivel medio + 3 en fila inferior.\n• Posición 1 — La Máscara / Persona Pública (arriba centro): el yo que se muestra al mundo, la imagen consciente y social. Lo que se presenta hacia afuera.\n• Posición 2 — Tu Sombra (nivel medio, izquierda): el aspecto RECHAZADO o NEGADO de ti mismo/a que vive en el inconsciente. Lo que proyectas en los demás porque no puedes verlo en ti.\n• Posición 3 — El Don Oculto en la Sombra (nivel medio, derecha): el regalo energético escondido dentro del aspecto rechazado. La Sombra siempre contiene un poder reprimido que puede convertirse en fortaleza cuando se integra.\n• Posición 4 — La Herida Original (fila inferior, izquierda): el momento, relación o patrón originario que creó la Sombra. El origen del rechazo.\n• Posición 6 — La Integración / Próximo Paso (fila inferior, centro): el camino concreto para integrar la sombra. La acción o reconocimiento más urgente del trabajo interior.\n• Posición 5 — El Patrón que se Repite (fila inferior, derecha): el comportamiento o tipo de situación que se repite en la vida externa como síntoma de la Sombra no integrada.`,
     positions: [
       { num: 1, label: 'Tu Máscara — Persona Pública',     x: 50, y: 12, w: 14, h: 22,
         placement: 'Arriba centro' },
@@ -466,6 +482,7 @@ export const SPREADS = [
     guide: 'Carta 1 arriba centro. Cartas 2 y 3 en el nivel medio. Cartas 4 y 5 en la fila inferior.',
     description: 'Más allá del ego, esta tirada pregunta para qué viniste aquí: talentos del alma, desafío kármico, misión, dones para dar y mensaje de tu guía interior.',
     whenToUse: 'En momentos de crisis existencial, cuando buscas sentido, o al inicio de un viaje espiritual.',
+    interpretationContext: `Tirada de misión del alma: 1 carta arriba + 2 en nivel medio + 2 en fila inferior.\n• Posición 1 — Los Dones del Alma (arriba centro): los talentos, cualidades y capacidades esenciales que el alma trajo a esta encarnación para expresar. Lo que haces con naturalidad y profundidad.\n• Posición 2 — El Desafío Kármico (nivel medio, izquierda): la prueba o patrón que el alma vino específicamente a superar en esta vida. La lección más difícil y también más importante.\n• Posición 3 — Tu Misión Específica (nivel medio, derecha): la forma concreta en que los dones del alma (posición 1) deben expresarse en el mundo para cumplir con el propósito.\n• Posición 4 — Lo que Viniste a Dar (fila inferior, izquierda): la contribución específica que el consultante está llamado a aportar a los demás y al mundo.\n• Posición 5 — El Mensaje de tu Guía (fila inferior, derecha): la orientación del Yo Superior o guía espiritual más relevante para este momento del camino.`,
     positions: [
       { num: 1, label: 'Los Dones del Alma',        x: 50, y: 15, w: 14, h: 22,
         placement: 'Arriba centro' },
@@ -491,6 +508,7 @@ export const SPREADS = [
     guide: 'Carta 1 arriba centro. Cartas 2 y 3 en el nivel medio. Cartas 4 y 5 en la fila inferior.',
     description: 'Explora el karma activo que influye en tu vida presente: deudas kármicas, ciclos que se completan y nuevas siembras del alma.',
     whenToUse: 'Cuando los mismos problemas se repiten, en trabajo de regresión o cuando hay atracciones/repulsiones inexplicables.',
+    interpretationContext: `Tirada kármica: 1 carta arriba + 2 en nivel medio + 2 en fila inferior.\n• Posición 1 — El Karma Activo Principal (arriba centro): el patrón kármico más activo e influyente en la vida presente del consultante, relacionado directamente con la pregunta.\n• Posición 2 — La Deuda Kármica a Saldar (nivel medio, izquierda): lo que el alma adeuda y debe equilibrar, una lección que viene de vidas anteriores y que sigue repitiendo hasta ser aprendida.\n• Posición 3 — El Ciclo que se Completa (nivel medio, derecha): el patrón o tema que está llegando a su fin en esta vida. Lo que está listo para cerrarse y no necesita repetirse.\n• Posición 4 — La Nueva Semilla a Plantar (fila inferior, izquierda): el nuevo karma positivo que puede crearse con las acciones y elecciones presentes. Lo que el consultante puede sembrar ahora.\n• Posición 5 — El Dharma / El Camino Correcto (fila inferior, derecha): la dirección alineada con el propósito del alma. El camino que genera menor resistencia kármica y mayor florecimiento.`,
     positions: [
       { num: 1, label: 'El Karma Activo Principal',     x: 50, y: 15, w: 14, h: 22,
         placement: 'Arriba centro' },
@@ -516,6 +534,7 @@ export const SPREADS = [
     guide: 'Tres cartas en fila horizontal: lo que sueltas a la izquierda, tu intención en el centro, la acción manifestadora a la derecha.',
     description: 'Durante luna nueva: qué dejar ir, qué intención plantar y qué acción concreta apoya esa intención para que se manifieste.',
     whenToUse: 'Durante luna nueva, al inicio de un proyecto o cuando quieres hacer un ritual de intención.',
+    interpretationContext: `Tres cartas en fila horizontal que forman un ritual de intención. Se leen como un proceso fluido y conectado.\n• Posición 1 — Lo que Dejas Ir (izquierda): el patrón, creencia, relación o situación que debe liberarse para que la nueva energía pueda entrar. Sin soltar esto, la nueva semilla no puede prosperar. Es la luna vieja que se va.\n• Posición 2 — Tu Intención (centro): la semilla específica que se planta en esta luna nueva. El deseo, propósito u objetivo que se quiere manifestar. La carta revela la energía que sostiene esa intención.\n• Posición 3 — La Acción que Manifiesta (derecha): el paso concreto y específico que convierte la intención en realidad. No es solo desear — es lo que hay que HACER en el plano material para que la luna nueva se materialice.`,
     positions: [
       { num: 1, label: 'Lo que Dejas Ir — Luna Vieja',       x: 20, y: 50, w: 16, h: 25,
         placement: 'Izquierda de la fila' },
@@ -537,6 +556,7 @@ export const SPREADS = [
     guide: 'Coloca las 4 cartas en forma de rombo/diamante: Fuego arriba, Agua abajo, Aire a la izquierda, Tierra a la derecha.',
     description: 'Los elementos Fuego, Agua, Aire y Tierra diagnostican el equilibrio energético: dónde hay exceso o carencia en tu vida.',
     whenToUse: 'Para diagnóstico energético general o cuando sientes desequilibrio sin saber de qué tipo.',
+    interpretationContext: `Rombo/diamante de 4 cartas, una por elemento. Cada carta diagnóstica ese dominio específico de la vida del consultante.\n• Posición 1 — Fuego (arriba del rombo): el estado de la pasión, voluntad, energía vital, motivación y creatividad activa. Palos de Bastos. Carta fuerte = energía e iniciativa. Carta débil o invertida = agotamiento o estancamiento.\n• Posición 2 — Agua (izquierda del rombo): el estado de las emociones, intuición, relaciones y mundo interior. Palos de Copas. Carta invertida puede indicar represión emocional o exceso de sentimentalismo.\n• Posición 3 — Aire (derecha del rombo): el estado de la mente, pensamientos, comunicación, decisiones y análisis. Palos de Espadas. Carta invertida puede indicar mente bloqueada o pensamiento caótico.\n• Posición 4 — Tierra (abajo del rombo): el estado del cuerpo, recursos materiales, trabajo concreto y estabilidad. Palos de Oros. Carta invertida puede indicar problemas materiales o desconexión del mundo físico.\nDiagnóstico: ¿qué elemento domina? ¿Cuál está más débil? El desequilibrio elemental revela dónde está el problema central.`,
     positions: [
       { num: 1, label: 'Fuego · Pasión & Voluntad (Bastos)',         x: 50, y: 12, w: 14, h: 22,
         placement: 'Arriba del rombo — Fuego' },
@@ -562,6 +582,7 @@ export const SPREADS = [
     guide: 'Carta 1 arriba centro (la situación). Cartas 2, 4 y 3 en la fila inferior: izquierda el camino A, centro el consejo, derecha el camino B.',
     description: 'Diseñada para momentos de bifurcación vital. Analiza la situación, las dos opciones con sus consecuencias y el consejo para elegir con conciencia.',
     whenToUse: 'Ante decisiones importantes de vida o cuando el miedo paraliza la elección.',
+    interpretationContext: `4 cartas en T invertida: 1 arriba + 3 abajo. El eje de la decisión.\n• Posición 1 — La Situación en la Encrucijada (arriba centro): la naturaleza real del momento de decisión. Qué está en juego, qué hace difícil elegir y cuál es la energía subyacente al dilema.\n• Posición 2 — Camino A (fila inferior, izquierda): la primera opción con sus consecuencias más probables. No describe el proceso de ese camino, sino hacia dónde lleva. Léela como el "si elijo A, esto es lo que encuentro."\n• Posición 4 — El Consejo (fila inferior, centro): la sabiduría del tarot para ayudar a elegir con consciencia. Puede ser un principio, una perspectiva o una acción que ilumina cuál camino es el correcto ahora.\n• Posición 3 — Camino B (fila inferior, derecha): la segunda opción con sus consecuencias. "Si elijo B, esto es lo que encuentro." Compara directamente con posición 2.`,
     positions: [
       { num: 1, label: 'La Situación en la Encrucijada', x: 50, y: 15, w: 14, h: 22,
         placement: 'Arriba centro — la situación a decidir' },
@@ -585,6 +606,7 @@ export const SPREADS = [
     guide: 'Carta 1 arriba centro. Cartas 2 y 3 en el nivel medio. Cartas 4 y 5 en la fila inferior.',
     description: 'Analiza la situación completa con foco en el pronóstico: factores ocultos, fuerzas determinantes, qué puedes cambiar y el resultado más probable.',
     whenToUse: 'Para obtener un pronóstico claro sobre una situación específica o ver factores ocultos.',
+    interpretationContext: `Tirada predictiva: 1 arriba + 2 en nivel medio + 2 en fila inferior.\n• Posición 1 — La Situación Presente (arriba centro): el estado actual objetivo y completo de la situación, tal como realmente está — sin las narrativas que el consultante se cuenta.\n• Posición 2 — Los Factores Ocultos (nivel medio, izquierda): las fuerzas o elementos que influyen en la situación pero NO son visibles para el consultante. Lo que está pasando "detrás del escenario".\n• Posición 3 — La Fuerza Determinante (nivel medio, derecha): el factor más poderoso que determinará el resultado final. El elemento clave que tiene más peso en cómo se resolverá la situación.\n• Posición 4 — Lo que Puedes Cambiar (fila inferior, izquierda): el área donde el consultante tiene poder real de acción e influencia. Dónde vale la pena enfocar la energía.\n• Posición 5 — El Resultado Probable (fila inferior, derecha): el desenlace hacia el que apunta la situación si se mantiene la tendencia actual. NO es un destino fijo — puede cambiarse actuando en la posición 4.`,
     positions: [
       { num: 1, label: 'La Situación Presente',      x: 50, y: 15, w: 14, h: 22,
         placement: 'Arriba centro' },
@@ -610,6 +632,7 @@ export const SPREADS = [
     guide: 'Dos filas de 3 cartas. Fila superior: cartas 1, 5 y 2 (energía, potencial y oportunidades). Fila inferior: cartas 3, 6 y 4 (obstáculos, próximo paso y habilidades).',
     description: 'Análisis completo de la vida profesional: energía y motivación, oportunidades, obstáculos, habilidades clave, potencial de crecimiento y próximo paso concreto.',
     whenToUse: 'En búsqueda de trabajo, crisis profesional, cambio de carrera o para entender la dinámica laboral actual.',
+    interpretationContext: `6 cartas en dos filas de 3. Layout: fila superior (cartas 1, 5, 2) + fila inferior (cartas 3, 6, 4). Posiciones no secuenciales — la carta 5 está en el CENTRO SUPERIOR.\nFILA SUPERIOR (de izquierda a derecha): carta 1 — carta 5 — carta 2.\nFILA INFERIOR (de izquierda a derecha): carta 3 — carta 6 — carta 4.\n• Posición 1 — Tu Energía Profesional Actual (fila superior, izquierda): el estado de tu motivación, presencia y energía en el ámbito profesional ahora mismo.\n• Posición 5 — El Potencial de Crecimiento (fila superior, centro): hacia dónde puede crecer tu carrera o trayectoria si las cosas evolucionan positivamente.\n• Posición 2 — Las Oportunidades que Emergen (fila superior, derecha): las puertas que se están abriendo ahora en lo profesional, quizás no totalmente visibles todavía.\n• Posición 3 — Los Obstáculos en tu Camino (fila inferior, izquierda): lo que está frenando o bloqueando el avance profesional, internos o externos.\n• Posición 6 — Tu Próximo Paso Concreto (fila inferior, centro): la acción más importante y específica a tomar ahora mismo. La más prioritaria.\n• Posición 4 — Las Habilidades a Desarrollar (fila inferior, derecha): las capacidades que deben fortalecerse para lograr el potencial de la posición 5.`,
     positions: [
       { num: 1, label: 'Tu Energía Profesional Actual',  x: 20, y: 28, w: 13, h: 20,
         placement: 'Fila superior, izquierda' },
@@ -637,6 +660,7 @@ export const SPREADS = [
     guide: 'Carta 1 arriba centro. Cartas 2 y 3 en el nivel medio. Cartas 4 y 5 en la fila inferior.',
     description: 'Tirada holística que examina la salud desde cuerpo, mente y espíritu: estado energético, origen emocional de síntomas, necesidades del cuerpo, estado mental y paso hacia el bienestar.',
     whenToUse: 'Con síntomas físicos sin causa clara, en procesos de sanación, o para revisión preventiva del bienestar.',
+    interpretationContext: `Tirada holística cuerpo-mente-espíritu: 1 arriba + 2 en nivel medio + 2 en fila inferior.\n• Posición 1 — Estado Energético General (arriba centro): la vitalidad global y el nivel de energía del consultante. Una visión panorámica de su estado de bienestar en este momento.\n• Posición 2 — El Origen Emocional del Síntoma (nivel medio, izquierda): la emoción no procesada, el patrón o la tensión emocional que subyace al malestar físico o psicológico. El cuerpo habla de lo que la mente no quiere ver.\n• Posición 3 — Lo que tu Cuerpo Necesita (nivel medio, derecha): el mensaje directo del cuerpo sobre lo que necesita para recuperar el equilibrio. Puede ser descanso, movimiento, nutrición, límites, expresión.\n• Posición 4 — El Estado Mental que Afecta la Salud (fila inferior, izquierda): los pensamientos, creencias o actitudes mentales que están impactando negativamente la salud.\n• Posición 5 — El Paso Concreto hacia el Bienestar (fila inferior, derecha): la acción más prioritaria e inmediata para iniciar o acelerar la recuperación y el bienestar.`,
     positions: [
       { num: 1, label: 'Estado Energético General',            x: 50, y: 15, w: 14, h: 22,
         placement: 'Arriba centro' },
@@ -662,6 +686,7 @@ export const SPREADS = [
     guide: 'Carta 1 arriba centro. Cartas 2 y 3 en el nivel medio. Cartas 4 y 5 en la fila inferior.',
     description: 'Apoya la manifestación consciente de objetivos: claridad del deseo, bloqueos internos, acciones concretas, sincronías que ya llegan y tiempo probable.',
     whenToUse: 'Cuando trabajas en manifestar algo concreto o haces trabajo de ley de atracción.',
+    interpretationContext: `Tirada de manifestación consciente: 1 arriba + 2 en nivel medio + 2 en fila inferior.\n• Posición 1 — La Claridad del Deseo (arriba centro): qué tan claro, específico y alineado está el deseo que el consultante quiere manifestar. Una carta difusa aquí indica que primero debe clarificarse QUÉ quiere exactamente.\n• Posición 2 — El Bloqueo Interno (nivel medio, izquierda): la creencia limitante, el miedo o la resistencia interna que sabotea la manifestación. Suele ser inconsciente. La carta revela exactamente de qué tipo es el bloqueo.\n• Posición 3 — Las Acciones Necesarias (nivel medio, derecha): los pasos concretos en el mundo externo que deben tomarse para co-crear la manifestación. La energía de la intención necesita apoyo en acción.\n• Posición 4 — Las Sincronías que ya Llegan (fila inferior, izquierda): las señales, coincidencias o sincronías que ya están ocurriendo como confirmación de que la manifestación está en proceso.\n• Posición 5 — El Tiempo / El Ritmo (fila inferior, derecha): la energía del momento y el ritmo natural de esta manifestación. Cartas de fuego = rápido, tierra = lento y sólido, agua = fluido, aire = mental/mental.`,
     positions: [
       { num: 1, label: 'La Claridad de tu Deseo',              x: 50, y: 15, w: 14, h: 22,
         placement: 'Arriba centro' },
@@ -687,6 +712,7 @@ export const SPREADS = [
     guide: 'Cartas 1 y 2 a la izquierda (inicio del viaje). Carta 3 arriba centro y carta 4 abajo centro (aliados y prueba). Cartas 5 y 6 a la derecha (el retorno transformado).',
     description: 'Basada en el Viaje del Héroe de Campbell. Mapea la transformación profunda: el llamado, el umbral, los aliados, la prueba central, la recompensa y el regreso.',
     whenToUse: 'En momentos de gran transición vital o para encontrar sentido en la adversidad.',
+    interpretationContext: `ATENCIÓN — layout en cruz horizontal con brazos asimétricos. NO es una fila simple de 6. Las posiciones 3 y 4 están ARRIBA Y ABAJO del centro, no en la fila horizontal.\nLayout: fila horizontal (cartas 1, 2, 5, 6) + carta 3 arriba del centro + carta 4 abajo del centro.\n• Posición 1 — El Llamado (extremo izquierdo de la fila): la aventura, reto o transformación a la que el consultante está siendo convocado.\n• Posición 2 — El Umbral (segunda desde la izquierda): el punto de no retorno que debe cruzarse al aceptar el llamado. El paso que lo cambia todo.\n• Posición 3 — Los Aliados (ARRIBA del centro): los recursos, personas y apoyos disponibles para el viaje. Lo que sostiene al consultante en el camino. Físicamente está por ENCIMA de la fila horizontal.\n• Posición 4 — La Prueba Central / El Dragón (ABAJO del centro): el mayor desafío, el miedo, el obstáculo central que debe enfrentarse. Físicamente está por DEBAJO de la fila horizontal.\n• Posición 5 — La Recompensa / El Don (segunda desde la derecha): el aprendizaje, don o transformación obtenidos después de superar la prueba.\n• Posición 6 — El Retorno Transformado (extremo derecho): quién ES el consultante después del viaje. La versión evolucionada que emerge del proceso.`,
     positions: [
       { num: 1, label: 'El Llamado · Tu Aventura',     x: 12, y: 50, w: 13, h: 20,
         placement: 'Extremo izquierdo — el inicio del viaje' },
@@ -714,6 +740,7 @@ export const SPREADS = [
     guide: 'Dos filas de 2 cartas: cartas 1 y 2 en la fila superior (tu visión vs la visión de otros), cartas 3 y 4 en la inferior (tu punto ciego y el mensaje).',
     description: 'Actúa como espejo de la realidad interna: cómo te ves, cómo te ven los demás, tu punto ciego y el mensaje más importante para este momento.',
     whenToUse: 'Para ganar perspectiva sobre uno mismo o antes de conversaciones difíciles.',
+    interpretationContext: `4 cartas en cuadrado de 2×2: fila superior (cartas 1 y 2) + fila inferior (cartas 3 y 4).\n• Posición 1 — Cómo te Ves a Ti Mismo/a (fila superior, izquierda): la autoimagen que el consultante tiene de sí mismo/a. La narrativa interna que construye sobre quién es. Puede ser muy diferente de la realidad.\n• Posición 2 — Cómo te Ven los Demás (fila superior, derecha): la imagen que el consultante proyecta al exterior y que los demás perciben. Puede ser sorprendente la diferencia con la posición 1.\n• Posición 3 — Tu Punto Ciego (fila inferior, izquierda): lo que el consultante NO puede ver de sí mismo/a aunque sea evidente para otros. El ángulo muerto de la autopercepción. Esta posición suele contener la clave de transformación más poderosa.\n• Posición 4 — El Mensaje más Necesario (fila inferior, derecha): la verdad, orientación o perspectiva que el tarot considera más importante para el consultante en este momento.`,
     positions: [
       { num: 1, label: 'Cómo te Ves a Ti Mismo',          x: 30, y: 30, w: 14, h: 22,
         placement: 'Fila superior, izquierda' },
@@ -737,6 +764,7 @@ export const SPREADS = [
     guide: 'Tres cartas en fila horizontal.',
     description: 'Se comunica con la sabiduría intuitiva: qué bloquea tu intuición, el mensaje que ya sabes pero no escuchas, y la acción pequeña que cambia todo.',
     whenToUse: 'Cuando te sientes confundido o analizas en exceso. También funciona bien como tirada de mañana.',
+    interpretationContext: `Tres cartas en fila horizontal para conectar con la guía interior. Se leen como un diálogo entre el bloqueo, la verdad y la acción.\n• Posición 1 — Lo que Bloquea tu Intuición (izquierda): el ruido mental, el miedo, la duda o el patrón que impide escuchar la voz interior. Puede ser una emoción no procesada, una creencia limitante o un exceso de análisis.\n• Posición 2 — El Mensaje que ya Sabes (centro): la verdad, respuesta o guía que en el fondo el consultante YA CONOCE pero que ha ignorado, minimizado o descartado por miedo. Esta carta confirma lo que ya sabe — no trae información nueva, sino reconocimiento.\n• Posición 3 — La Acción que lo Cambia Todo (derecha): el gesto pequeño, concreto y específico que puede mover toda la situación en la dirección correcta. No tiene que ser grande — a veces es un pensamiento, una conversación o un límite.`,
     positions: [
       { num: 1, label: 'Lo que Bloquea tu Intuición',    x: 20, y: 50, w: 16, h: 25,
         placement: 'Izquierda de la fila' },
@@ -758,6 +786,7 @@ export const SPREADS = [
     guide: 'Cartas 1 y 2 en la fila superior (una por opción). Carta 3 en el centro (el factor oculto). Cartas 4 y 5 en la fila inferior (consecuencia a largo plazo de cada opción).',
     description: 'Para elegir entre dos opciones concretas. Muestra la energía de cada camino, un factor oculto que no estás viendo y las consecuencias a largo plazo.',
     whenToUse: 'Para decisiones concretas entre dos opciones específicas cuando la parálisis por análisis te tiene atascado.',
+    interpretationContext: `5 cartas en cruz asimétrica: 2 arriba + 1 centro + 2 abajo.\nFILA SUPERIOR (de izquierda a derecha): carta 1 — carta 2.\nCENTRO (entre las dos filas): carta 3.\nFILA INFERIOR (de izquierda a derecha): carta 4 — carta 5.\n• Posición 1 — Opción A (fila superior, izquierda): la energía inherente del primer camino. La naturaleza de esa elección, su vibración y lo que trae consigo en esencia.\n• Posición 2 — Opción B (fila superior, derecha): la energía inherente del segundo camino. Compara directamente con posición 1.\n• Posición 3 — El Factor Oculto (centro, entre las dos filas): el elemento crucial que el consultante NO está considerando y que influirá significativamente en el resultado de cualquier elección. Puede cambiar el análisis completamente.\n• Posición 4 — Consecuencia a Largo Plazo de Opción A (fila inferior, izquierda): directamente debajo de la carta 1. Lo que ocurrirá a medio/largo plazo si se elige el camino A.\n• Posición 5 — Consecuencia a Largo Plazo de Opción B (fila inferior, derecha): directamente debajo de la carta 2. Lo que ocurrirá a medio/largo plazo si se elige el camino B.\nAnálisis clave: comparar 1↔2 (energías actuales) y 4↔5 (consecuencias futuras). La posición 3 es el dato que puede inclinar la balanza.`,
     positions: [
       { num: 1, label: 'Opción A · Su Energía',                x: 25, y: 25, w: 14, h: 22,
         placement: 'Fila superior, izquierda — el primer camino' },
@@ -772,6 +801,586 @@ export const SPREADS = [
     ],
   },
 
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  //  COLECCIÓN · 25 TIRADAS DE 3 CARTAS
+  //  25 lecturas únicas, cada una con su propio sistema de significados por posición
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  // 1 ─ Pasado – Presente – Futuro
+  {
+    id: 'col3_pasado_presente',
+    category: 'tres_col',
+    name: 'Pasado · Presente · Futuro',
+    subtitle: 'Tres cartas · La lectura temporal esencial',
+    origin: 'Tradición Universal del Tarot',
+    cards: 3,
+    icon: '◇',
+    guide: 'Coloca las tres cartas en fila horizontal de izquierda a derecha: Pasado (izquierda), Presente (centro), Futuro (derecha).',
+    description: 'La tirada de tres cartas más universal. Revela el hilo narrativo de tu situación mostrando las influencias del pasado que siguen activas, la energía del momento presente y el resultado probable si nada cambia. El Futuro no es un destino fijo sino una tendencia que puede modificarse con nuevas decisiones.',
+    whenToUse: 'Para cualquier tema de tu vida donde quieras entender su evolución. Preguntas ideales: "¿Cómo evoluciona mi situación con [persona / proyecto / relación]?", "¿Cuáles son las causas de lo que me está pasando y hacia dónde voy?", "¿Qué necesito saber sobre [área] en este momento?". Funciona bien para entender causas y tendencias de una situación en movimiento. No recomendada para preguntas de sí/no.',
+    interpretationContext: `Secuencia temporal lineal de izquierda a derecha — narrativa de causa, estado y tendencia.\n• Posición 1 — El Pasado / Sus Influencias Activas (izquierda): las fuerzas del pasado reciente o lejano que SIGUEN ACTIVAS y afectan la situación actual. No algo que ya terminó completamente — es lo que continúa operando como trasfondo o causa generadora del presente.\n• Posición 2 — El Presente / La Situación Real (centro): el estado actual tal como ES, sin filtros ni expectativas. La energía viva en este momento exacto en relación a la pregunta.\n• Posición 3 — El Futuro / La Tendencia Probable (derecha): el resultado probable SI LAS COSAS NO CAMBIAN. No es destino fijo — es la tendencia natural de las energías pasadas y presentes. Puede modificarse con nuevas acciones y decisiones.\nClave interpretativa: lee las tres como una narrativa continua. ¿La causa (1) explica el estado actual (2)? ¿El futuro (3) es consecuencia lógica de ambos? Si hay tensión entre cartas, señala el punto de posible cambio.`,
+    positions: [
+      { num: 1, label: 'El Pasado · Sus Influencias Activas', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'El Presente · La Situación Real', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'El Futuro · La Tendencia Probable', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 2 ─ Soltar – Recibir – Mantener
+  {
+    id: 'col3_soltar_recibir',
+    category: 'tres_col',
+    name: 'Soltar · Recibir · Mantener',
+    subtitle: 'Tres cartas · Ciclos y renovación',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '☽',
+    guide: 'Coloca las tres cartas en fila: Soltar (izquierda), Recibir (centro), Mantener (derecha).',
+    description: 'Tirada ideal para momentos de transición, ciclos lunares o el inicio de un nuevo período. Clarifica qué energías o situaciones deben liberarse, cuáles deben recibirse y cuáles deben preservarse para avanzar con intención y claridad.',
+    whenToUse: 'Ideal para luna nueva o llena, inicio de año o de una estación, o cualquier momento de transición personal. Preguntas que funcionan: "¿Qué necesito soltar, recibir y mantener en este nuevo ciclo?", "¿Qué libero para que mi [relación / trabajo / vida] mejore?", "¿Cómo entrar bien en esta nueva etapa?". También funciona dirigida a un área específica: "¿Qué hago con [tema concreto] — qué suelto, recibo y mantengo?".',
+    interpretationContext: `Tirada de discernimiento para transiciones y renovaciones conscientes. Las tres posiciones forman un proceso encadenado.\n• Posición 1 — SOLTAR (izquierda): lo que el consultante necesita liberar, dejar ir o desprenderse. Puede ser un patrón de pensamiento, una emoción, una situación, una relación o un hábito. Incluso si la carta parece positiva, en esta posición indica algo que ya cumplió su ciclo y debe liberarse para hacer espacio.\n• Posición 2 — RECIBIR (centro): lo que el consultante necesita atraer o abrirse a recibir, ya sea de sí mismo o del entorno. Un recurso, una cualidad interna, apoyo externo, una oportunidad o incluso descanso. La carta muestra QUÉ tipo de energía necesita entrar.\n• Posición 3 — MANTENER (derecha): lo que debe preservarse, cuidarse y no abandonarse. Fortalezas actuales, valores, relaciones o prácticas que están funcionando bien y merecen ser reconocidas y conservadas.\nFlujo de lectura: al soltar (1) se crea espacio para recibir (2), y al integrar lo recibido se fortalece lo que vale la pena mantener (3). Leer las tres como proceso encadenado, no como posiciones aisladas.`,
+    positions: [
+      { num: 1, label: 'Soltar · Lo que Debes Liberar', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'Recibir · Lo que Necesitas Atraer', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'Mantener · Lo que Debes Conservar', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 3 ─ Cuerpo – Mente – Alma
+  {
+    id: 'col3_cuerpo_mente',
+    category: 'tres_col',
+    name: 'Cuerpo · Mente · Alma',
+    subtitle: 'Tres cartas · Autoevaluación holística',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '⊛',
+    guide: 'Coloca las tres cartas en fila: Cuerpo (izquierda), Mente (centro), Alma (derecha).',
+    description: 'Autoevaluación holística de los tres planos del ser. Cada carta diagnostica un aspecto diferente: el estado físico y energético, los patrones mentales y emocionales, y las necesidades del alma o del espíritu. Revela dónde hay desequilibrio y qué dimensión necesita atención prioritaria.',
+    whenToUse: 'Para revisiones periódicas de bienestar integral o cuando sientes que algo está "fuera de lugar" pero no sabes exactamente qué. Preguntas ideales: "¿Cómo estoy en cuerpo, mente y espíritu?", "¿Qué necesita cada dimensión de mi ser en este momento?", "¿Qué necesito para estar más equilibrado/a?". También se puede usar enfocada en un tema específico: "¿Cómo me afecta [situación] en cuerpo, mente y alma?".',
+    interpretationContext: `Diagnóstico holístico de los tres planos del ser humano. Cada posición habla de un nivel de experiencia diferente.\n• Posición 1 — CUERPO (izquierda): el estado del plano físico y energético. Qué necesita trabajarse para mejorar la salud física, la vitalidad o el bienestar corporal. Cartas de tierra (Oros/Pentáculos) son especialmente relevantes aquí. Una carta invertida puede indicar descuido del cuerpo o síntoma físico que pide atención.\n• Posición 2 — MENTE (centro): el estado de los patrones de pensamiento, emociones y estado psicológico. Qué necesita cambiarse a nivel mental para que el consultante pueda sentir más calma, claridad o alegría. Cartas de aire (Espadas) o agua (Copas) son especialmente reveladoras aquí.\n• Posición 3 — ALMA / ESPÍRITU (derecha): las necesidades del alma o de la práctica espiritual. Qué debe nutrirse a nivel profundo, trascendente o de sentido de vida. Los Arcanos Mayores son especialmente significativos en esta posición.\nAnálisis de conjunto: ¿qué plano está más equilibrado y cuál más desatendido? La carta más intensa (Arcano Mayor, energía dominante) señala el área prioritaria.`,
+    positions: [
+      { num: 1, label: 'Cuerpo · Tu Salud y Energía Física', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'Mente · Tus Patrones y Emociones', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'Alma · Tu Necesidad Espiritual Profunda', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 4 ─ Deseo – Conflicto – Resolución
+  {
+    id: 'col3_deseo_conflicto',
+    category: 'tres_col',
+    name: 'Deseo · Conflicto · Resolución',
+    subtitle: 'Tres cartas · Metas y obstáculos',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '◆',
+    guide: 'Coloca las tres cartas en fila: Deseo (izquierda), Conflicto (centro), Resolución (derecha).',
+    description: 'Tirada para analizar un deseo o meta y lo que la obstaculiza. Ideal para relaciones pero también para cualquier objetivo: muestra qué quieres, qué está interponiéndose en el camino (que frecuentemente eres tú mismo/a) y qué acciones concretas podrían resolver el conflicto y abrir el paso.',
+    whenToUse: 'Para analizar relaciones complicadas, metas bloqueadas o situaciones donde tienes un deseo claro pero algo lo impide. Preguntas ideales: "¿Por qué no puedo conseguir [X] y qué puedo hacer?", "¿Qué quiero en esta relación, qué nos impide avanzar y cómo resolverlo?", "¿Qué obstáculo me separa de mi meta y cómo superarlo?". Funciona bien cuando ya tienes claro lo que deseas pero no cómo conseguirlo.',
+    interpretationContext: `Tirada de diagnóstico y resolución de bloqueos entre un deseo y su cumplimiento.\n• Posición 1 — EL DESEO (izquierda): lo que el consultante realmente quiere: su meta, sueño u objetivo declarado. La carta puede confirmar el deseo, matizarlo o revelar que hay un deseo más profundo detrás del aparente. Pregunta clave: ¿qué te muestra la carta sobre lo que en verdad quieres?\n• Posición 2 — EL CONFLICTO (centro): el obstáculo principal que impide conseguir el deseo. ATENCIÓN CRÍTICA: el conflicto con mucha frecuencia es INTERNO (miedo, creencia limitante, sabotaje propio, resistencia inconsciente) y no sólo externo. No suavices si la carta indica que el obstáculo es el propio consultante — esa honestidad es el valor de esta posición.\n• Posición 3 — LA RESOLUCIÓN (derecha): los pasos, actitud o enfoque que podrían resolver el conflicto y abrir el camino hacia el deseo. No es garantía de resultado — es la dirección recomendada. Puede ser una acción concreta, un cambio de perspectiva o un trabajo interno necesario.\nFlujo: el deseo (1) choca con el conflicto (2). La resolución (3) es el puente entre ambos.`,
+    positions: [
+      { num: 1, label: 'El Deseo · Tu Meta o Sueño', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'El Conflicto · Lo que se Interpone', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'La Resolución · El Camino de Acción', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 5 ─ Energía – Acción – Obstáculo
+  {
+    id: 'col3_energia_accion',
+    category: 'tres_col',
+    name: 'Energía · Acción · Obstáculo',
+    subtitle: 'Tres cartas · Lectura matutina del día',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '✦',
+    guide: 'Hacer esta tirada a primera hora de la mañana. Coloca las tres cartas en fila: Energía (izquierda), Acción (centro), Obstáculo (derecha).',
+    description: 'Tirada matutina para comenzar el día con intención. Muestra el tipo y nivel de energía disponible para el día, cómo deberías actuar para aprovecharlo al máximo y qué obstáculo podría aparecer para interferir. Es una brújula práctica para navegar el día con consciencia.',
+    whenToUse: 'Hacer esta tirada a primera hora de la mañana, antes de comenzar el día. No tiene sentido hacerla por la tarde o noche. Preguntas para enmarcarla: "¿Cómo es mi energía hoy, cómo debo actuar y qué puede obstaculizarme?", "¿Qué necesito saber para navegar bien el día de hoy?". También puede orientarse a un evento específico del día: "Hoy tengo [reunión / cita / conversación] — ¿qué energía tengo, cómo debo actuar y qué puede complicarlo?".',
+    interpretationContext: `Tirada orientada al día presente — práctica, concreta y accionable. Siempre se hace POR LA MAÑANA.\n• Posición 1 — ENERGÍA (izquierda): el nivel y tipo de energía disponible hoy. Puede reflejar el estado de ánimo, la vitalidad general o la energía específica en relación a algún evento del día. Incluso una carta "difícil" informa útilmente: El Colgado = día para observar y esperar, no para actuar impulsivamente; La Torre = día de sorpresas y cambios inesperados que requieren flexibilidad.\n• Posición 2 — ACCIÓN (centro): cómo presentarse y actuar para "ganar" el día dado ese nivel energético. La estrategia óptima. ¿Qué cualidad debe encarnar el consultante hoy? ¿Qué tipo de acción es más efectiva con esa energía?\n• Posición 3 — EL OBSTÁCULO (derecha): lo que podría interponerse o complicar el día. Puede ser una persona, una circunstancia externa, una emoción propia o un patrón que baja la energía. Es una ADVERTENCIA PREVENTIVA — conocer el obstáculo de antemano permite manejarlo mejor en lugar de ser sorprendido por él.\nTono de lectura: directo, práctico y concreto. Dar respuestas aplicables al día cotidiano, no análisis abstractos.`,
+    positions: [
+      { num: 1, label: 'Energía · Tu Nivel Energético Hoy', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'Acción · Cómo Debes Presentarte Hoy', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'Obstáculo · Lo que Puede Interferir', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 6 ─ Decisión – Ventajas – Desventajas
+  {
+    id: 'col3_decision_proscons',
+    category: 'tres_col',
+    name: 'Decisión · Ventajas · Desventajas',
+    subtitle: 'Tres cartas · Análisis de una opción concreta',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '⊞',
+    guide: 'Antes de barajar, enfoca tu mente en UNA opción o decisión específica. Coloca las tres cartas en fila: Decisión (izquierda), Ventajas/Pros (centro), Desventajas/Contras (derecha). Puedes repetir la tirada para cada opción que estés considerando.',
+    description: 'Tirada para analizar una decisión concreta desde tres ángulos: la naturaleza de la decisión y sus implicaciones generales, los beneficios potenciales si se toma, y los problemas o consecuencias negativas que podría traer. Se puede hacer varias veces, una por cada opción en consideración.',
+    whenToUse: 'Cuando tienes una decisión específica y quieres ver sus pros y contras. Preguntas que funcionan: "¿Qué pasa si acepto este trabajo [o propuesta / oferta]?", "¿Cuáles son las ventajas y desventajas de emprender [proyecto]?", "¿Qué implica elegir [opción concreta]?". IMPORTANTE: formula mentalmente UNA opción concreta antes de barajar — esta tirada analiza UNA decisión, no la situación general. Puedes hacerla varias veces para comparar opciones.',
+    interpretationContext: `Tirada de análisis coste-beneficio para una decisión específica ya formulada mentalmente antes de barajar.\n• Posición 1 — LA DECISIÓN (izquierda): información sobre la naturaleza de la elección planteada. Por ejemplo: cómo te sentirías al tomarla, la energía que trae consigo o el impacto general en tu vida. No dice si deberías o no tomarla — describe QUÉ TIPO de decisión es y qué cualidad tiene.\n• Posición 2 — VENTAJAS / LOS PROS (centro): los beneficios, oportunidades y aspectos favorables que traería esta decisión si se toma. Los pros reales de este camino. Incluso una carta aparentemente "difícil" en esta posición contiene un beneficio — identificar cuál.\n• Posición 3 — DESVENTAJAS / LOS CONTRAS (derecha): los problemas, riesgos, consecuencias difíciles o costes que podría traer esta decisión. Ser honesto aquí es esencial. Incluso si la carta parece positiva, en esta posición señala algo que puede convertirse en problema o coste real.\nUso múltiple: si el consultante considera varias opciones, puede hacer una tirada por opción y comparar. La carta de Ventajas y Desventajas de cada tirada se comparan entre sí para tomar la mejor decisión.`,
+    positions: [
+      { num: 1, label: 'La Decisión · Su Naturaleza e Impacto', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'Ventajas · Los Pros de Esta Opción', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'Desventajas · Los Contras y Riesgos', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 7 ─ Cabeza – Corazón – Espíritu
+  {
+    id: 'col3_cabeza_corazon',
+    category: 'tres_col',
+    name: 'Cabeza · Corazón · Espíritu',
+    subtitle: 'Tres cartas · Mente, pasión y alma',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '♡',
+    guide: 'Coloca las tres cartas en fila: Cabeza (izquierda), Corazón (centro), Espíritu (derecha).',
+    description: 'Tirada de autoevaluación profunda que da voz a tres instancias internas que frecuentemente entran en conflicto: la mente lógica (qué dice el análisis racional), el corazón (qué dice la pasión y los sentimientos) y el espíritu (qué necesita el alma). Ideal cuando lógica, sentimiento y alma apuntan en direcciones distintas.',
+    whenToUse: 'Para decisiones importantes de vida, especialmente cuando la lógica y los sentimientos no están alineados. Preguntas ideales: "¿Qué me dice mi mente, mi corazón y mi alma sobre [cambio de trabajo / pareja / lugar de vida]?", "¿Debo seguir la razón o el corazón en [situación]?", "¿Qué necesito considerar antes de tomar esta decisión importante?". Excelente para momentos de cambios significativos o cuando uno siente que "algo no encaja".',
+    interpretationContext: `Tirada que da voz a tres instancias internas que frecuentemente están en conflicto entre sí.\n• Posición 1 — LA CABEZA (izquierda): lo que el pensamiento lógico y racional del consultante dice sobre la situación. Los argumentos de la razón, el análisis, los datos y la lógica. ¿Qué le dice su mente que haga? Cartas de aire (Espadas) son especialmente reveladoras aquí.\n• Posición 2 — EL CORAZÓN (centro): lo que la pasión, los sentimientos y el amor dicen. No la lógica — la voz emocional. Lo que el corazón desea, siente o teme. ¿Qué le dice el corazón que haga? Cartas de agua (Copas) son especialmente reveladoras aquí.\n• Posición 3 — EL ESPÍRITU (derecha): lo que el alma necesita. Va más allá de la mente y el corazón — es la voz más profunda y auténtica del ser. A veces ni la mente ni el corazón tienen razón, y es el espíritu quien ve el camino real. Los Arcanos Mayores son especialmente significativos aquí.\nAnálisis clave: ¿las tres cartas apuntan en la misma dirección? Si hay tensión entre ellas, identificar cuál instancia tiene más peso en este momento de la vida del consultante. Cuando las tres están alineadas, es el camino más claro.`,
+    positions: [
+      { num: 1, label: 'La Cabeza · Tu Mente Lógica y Racional', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'El Corazón · Tu Pasión y Sentimientos', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'El Espíritu · Lo que Tu Alma Necesita', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 8 ─ Mañana – Tarde – Noche
+  {
+    id: 'col3_manana_tarde',
+    category: 'tres_col',
+    name: 'Mañana · Tarde · Noche',
+    subtitle: 'Tres cartas · Pronóstico de los tres momentos del día',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '◎',
+    guide: 'Hacer siempre a primera hora de la mañana, antes de empezar el día. Coloca las tres cartas en fila: Mañana (izquierda), Tarde (centro), Noche (derecha).',
+    description: 'Tirada predictiva para los tres momentos del día. Ofrece una instantánea de la energía, posibles eventos y cómo comportarse en cada período. No predice eventos exactos, sino la energía y el tono de cada parte del día, lo cual permite navegar con mayor consciencia y preparación.',
+    whenToUse: 'Hacer SIEMPRE a primera hora de la mañana, antes de empezar el día — no tiene sentido hacerla por la tarde o noche. Preguntas para enmarcarla: "¿Cómo será mi día hoy, momento a momento?", "¿Qué energía tendré en cada parte del día?". También puede orientarse a un día con eventos específicos: "Hoy tengo [presentación / reunión / cita importante] — ¿cómo será cada parte del día?". No hacerla para un día futuro — es exclusivamente para el día DE HOY.',
+    interpretationContext: `Tirada predictiva para los tres momentos del día presente. SOLO se hace POR LA MAÑANA antes de empezar el día.\n• Posición 1 — LA MAÑANA (izquierda): la energía y los posibles eventos o actitudes que predominarán durante la mañana. Dar interpretaciones concretas y cotidianas: El 8 de Bastos = moverse rápido por la mañana; El 4 de Espadas = la mañana pide calma y reflexión; El Sol = mañana luminosa y con energía positiva.\n• Posición 2 — LA TARDE (centro): la energía del período de tarde. Puede indicar obstáculos, oportunidades o el tipo de interacciones que habrá. La Luna = tarde de incertidumbre o necesidad de confiar en la intuición; El 3 de Copas = tarde social y festiva; El 5 de Espadas = posibles conflictos en la tarde.\n• Posición 3 — LA NOCHE (derecha): cómo terminará el día, la energía del cierre y del descanso. El 4 de Copas = noche introspectiva; El 3 de Copas = noche social; El Ermitaño = noche para la soledad y la reflexión.\nTono de la lectura: PRÁCTICO y CONCRETO. Dar pistas específicas sobre qué esperar y cómo comportarse en cada momento del día. Evitar el simbolismo abstracto — priorizar la aplicabilidad cotidiana.`,
+    positions: [
+      { num: 1, label: 'La Mañana · Energía y Tono del AM', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'La Tarde · Energía y Tono del PM', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'La Noche · Cierre y Desenlace del Día', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 9 ─ Inicio – Mitad – Fin de Semana
+  {
+    id: 'col3_semana',
+    category: 'tres_col',
+    name: 'Inicio · Mitad · Fin de Semana',
+    subtitle: 'Tres cartas · Previsión semanal',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '✤',
+    guide: 'Hacer los domingos por la noche o los lunes por la mañana. Coloca las tres cartas en fila: Inicio de semana (izquierda), Mitad (centro), Fin de semana (derecha).',
+    description: 'Previsión semanal en tres actos: el inicio (lunes/martes), la mitad (miércoles) y el cierre (jueves-domingo). Puede interpretarse como pasado-presente-futuro a corto plazo, o como una guía de qué energía y qué aspectos merecen atención en cada tramo de la semana.',
+    whenToUse: 'Hacer los domingos por la noche o los lunes por la mañana para la semana que comienza. Preguntas ideales: "¿Cómo se desarrollará mi semana?", "¿Qué energía tendré al inicio, en la mitad y al final de esta semana?", "¿A qué debo prestar atención en cada tramo de la semana?". También puede orientarse a una semana con eventos clave: "Esta semana tengo [proceso / proyecto] — ¿cómo evolucionará?".',
+    interpretationContext: `Previsión semanal en tres períodos temporales. Se hace al INICIO de la semana (domingo noche o lunes mañana).\n• Posición 1 — INICIO DE SEMANA (izquierda) — Lunes / Martes: la energía y el tono de los primeros días. ¿Hay momentum y claridad o resistencia y niebla? ¿Qué actitud predomina al comenzar? Esta carta frecuentemente marca el tono general de toda la semana.\n• Posición 2 — MITAD DE SEMANA (centro) — Miércoles: el punto de inflexión. Puede indicar desafíos, oportunidades o la necesidad de ajustar el rumbo a mitad del camino. Si la carta es diferente en tono a la carta 1, señala un cambio de energía a mitad de semana.\n• Posición 3 — FIN DE SEMANA (derecha) — Jueves al Domingo: cómo termina la semana. El desenlace probable del período semanal. ¿La semana cierra bien o con tensión? ¿Qué energía lleva al fin de semana?\nPuede interpretarse de dos formas complementarias: (a) como tirada temporal corta (inicio = pasado de la semana, mitad = presente, fin = futuro), o (b) como advertencia sobre qué prestar atención en cada tramo.`,
+    positions: [
+      { num: 1, label: 'Inicio de Semana · Lunes y Martes', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'Mitad de Semana · Miércoles', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'Fin de Semana · Jueves al Domingo', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 10 ─ Dentro – Fuera – Relación entre ambos
+  {
+    id: 'col3_dentro_fuera',
+    category: 'tres_col',
+    name: 'Dentro · Fuera · La Relación',
+    subtitle: 'Tres cartas · Mundo interior y exterior',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '◬',
+    guide: 'Coloca las tres cartas en fila: Dentro / Lo Interno (izquierda), Fuera / Lo Externo (centro), La Relación entre Ambos (derecha).',
+    description: 'Tirada de autorreflexión que explora cómo el mundo interior (pensamientos, emociones, energía interna) y el mundo exterior (circunstancias, personas, entorno) están interactuando. La tercera carta conecta ambos mundos y revela cómo lo interno afecta lo externo y viceversa. Especialmente valiosa acompañada de un diario.',
+    whenToUse: 'Ideal para cuando hay tensión entre cómo te sientes por dentro y lo que está pasando afuera. Perfecta para acompañarse de escritura en un diario. Preguntas que funcionan: "¿Cómo mi estado interno está afectando [situación externa]?", "¿Cómo mi entorno está influyendo en cómo me siento?", "¿Por qué lo que pienso y lo que vivo parecen tan distintos en [tema]?", "¿Cómo está la relación entre mi mundo interior y mi vida exterior respecto a [área]?".',
+    interpretationContext: `Tirada de introspección que examina la dualidad interior-exterior y su interacción bidireccional.\n• Posición 1 — EL INTERIOR / DENTRO (izquierda): cómo los propios pensamientos, emociones, creencias y energía interna del consultante están afectando o generando la situación sobre la que pregunta. Lo que viene de DENTRO y que el consultante lleva consigo. Su mundo subjetivo.\n• Posición 2 — EL EXTERIOR / FUERA (centro): cómo las circunstancias externas (personas, trabajo, dinero, entorno social, hechos concretos) están influyendo en la situación. Lo que viene de FUERA y que el consultante no controla directamente. Su mundo objetivo.\n• Posición 3 — LA RELACIÓN ENTRE AMBOS (derecha): la carta que conecta los puntos. Cómo el mundo interior afecta al exterior y cómo el exterior impacta al interior. El puente bidireccional. Puede revelar qué cambiar primero: si la carta 1 es más intensa que la 2, el trabajo es principalmente interior; si la 2 es más intensa, hay que atender primero lo externo.\nMuy útil con diario: escribir sobre cada posición después de la lectura profundiza enormemente la reflexión.`,
+    positions: [
+      { num: 1, label: 'El Interior · Tu Mundo Interno', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'El Exterior · Tu Mundo Externo', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'La Relación · Cómo se Conectan Ambos', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 11 ─ Arriba – Abajo – Relación entre los dos
+  {
+    id: 'col3_arriba_abajo',
+    category: 'tres_col',
+    name: 'Arriba · Abajo · La Relación',
+    subtitle: 'Tres cartas · Espiritual y terrenal',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '△',
+    guide: 'Coloca las tres cartas en fila: Arriba / Lo Espiritual (izquierda), Abajo / Lo Terrenal (centro), La Relación entre los Dos (derecha).',
+    description: 'Tirada que explora la dualidad entre lo espiritual o mental y lo terrenal o físico. La tercera carta muestra cómo se relacionan estas dos dimensiones. Puede interpretarse como espíritu vs. materia, mentalidad vs. comportamiento, o influencias invisibles vs. circunstancias concretas.',
+    whenToUse: 'Para explorar la tensión entre lo espiritual y lo práctico, entre el pensamiento y la acción, o entre lo visible y lo invisible. Preguntas que funcionan: "¿Cómo lo espiritual (o mi mentalidad) y lo práctico (o mi comportamiento) se relacionan en [situación]?", "¿Qué influye desde arriba y desde abajo en [tema]?", "¿Cómo equilibrar lo espiritual y lo terrenal en [área]?".',
+    interpretationContext: `Tirada de dualidad espiritual-terrenal (o mental-corporal), con dos interpretaciones posibles según la pregunta.\n• Posición 1 — ARRIBA (izquierda): puede interpretarse de dos maneras según la pregunta del consultante: (a) las influencias espirituales o trascendentes que actúan sobre la situación — lo invisible, lo arquetípico, lo que "viene del cielo"; o (b) cómo los pensamientos, mentalidad y actitud mental afectan la situación. Lo intangible que opera desde arriba.\n• Posición 2 — ABAJO (centro): puede interpretarse como: (a) las influencias terrenales y materiales — las circunstancias concretas, el cuerpo, el dinero, el comportamiento físico y cotidiano; o (b) cómo el propio cuerpo, salud o comportamiento están influyendo. Lo concreto y tangible que opera desde abajo.\n• Posición 3 — LA RELACIÓN ENTRE LOS DOS (derecha): cómo las dimensiones arriba y abajo se conectan, influyen y equilibran (o desequilibran) mutuamente. Esta carta es frecuentemente la más reveladora — conecta lo espiritual con lo práctico y muestra el puente necesario entre ambas dimensiones.\nElegir la interpretación (a) o (b) que resuene más con la pregunta y el contexto del consultante.`,
+    positions: [
+      { num: 1, label: 'Arriba · Lo Espiritual o Mental', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'Abajo · Lo Terrenal o Corporal', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'La Relación · El Puente entre Ambos', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 12 ─ Problema – Haz esto – No hagas esto
+  {
+    id: 'col3_problema_guia',
+    category: 'tres_col',
+    name: 'Problema · Haz Esto · No Hagas Esto',
+    subtitle: 'Tres cartas · Guía de acción directa',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '✘',
+    guide: 'Coloca las tres cartas en fila: El Problema (izquierda), Haz Esto (centro), No Hagas Esto (derecha).',
+    description: 'Guía directa y práctica para resolver un problema concreto. La primera carta identifica el núcleo del problema; la segunda sugiere la acción más beneficiosa; la tercera advierte sobre la acción o enfoque que debe evitarse porque empeoraría la situación. Orientación inmediata sin rodeos.',
+    whenToUse: 'Cuando tienes un problema concreto y necesitas orientación práctica e inmediata sobre qué hacer y qué evitar. Esta tirada requiere que ya tengas clara la situación sobre la que preguntas. Preguntas que funcionan: "¿Qué hago con [problema]?", "¿Cómo abordar [conflicto / situación difícil]?", "¿Qué debo hacer y qué evitar en [tema]?". Perfecta cuando sientes que "algo no sé cómo manejarlo" y buscas instrucciones claras.',
+    interpretationContext: `Tirada de orientación directa con foco en la acción inmediata y concreta.\n• Posición 1 — EL PROBLEMA (izquierda): la naturaleza real y el núcleo de la cuestión que se plantea. La carta puede confirmar el problema declarado, matizarlo o revelar un problema más profundo detrás del aparente. Esta posición define el QUÉ está pasando realmente.\n• Posición 2 — HAZ ESTO (centro): la acción, enfoque o actitud que el tarot recomienda tomar. Interpretar como sugerencia de acción concreta y aplicable. ¿Qué tipo de energía debe encarnar el consultante? ¿Qué paso específico debe dar? ¿Qué actitud debe adoptar?\n• Posición 3 — NO HAGAS ESTO (derecha): el enfoque, acción o actitud que se debe EVITAR porque podría empeorar el problema o crear nuevas complicaciones. CRÍTICO: incluso si la carta parece positiva, en esta posición advierte algo que actualmente no es adecuado o que llevaría en la dirección equivocada. La posición cambia el significado de la carta.\nTono de lectura: directo, práctico y orientado a la acción. Menos simbolismo abstracto, más orientación concreta sobre qué hacer y qué no. El consultante busca instrucciones claras.`,
+    positions: [
+      { num: 1, label: 'El Problema · El Núcleo de la Cuestión', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'Haz Esto · La Acción Recomendada', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'No Hagas Esto · Lo que Debes Evitar', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 13 ─ Luz Roja – Luz Verde – Luz Amarilla
+  {
+    id: 'col3_semaforo',
+    category: 'tres_col',
+    name: 'Luz Roja · Luz Verde · Luz Amarilla',
+    subtitle: 'Tres cartas · Parar · Avanzar · Precaución',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '◐',
+    guide: 'Coloca las tres cartas en fila: Luz Roja — Parar (izquierda), Luz Verde — Avanzar (centro), Luz Amarilla — Precaución (derecha).',
+    description: 'Tirada con la metáfora del semáforo. La Luz Roja muestra qué debe detenerse o pausarse. La Luz Verde indica en qué avanzar o comenzar. La Luz Amarilla señala dónde proceder con cuidado, reducir el ritmo o prestar más atención antes de actuar.',
+    whenToUse: 'Para evaluaciones generales de vida o para revisar una situación o proyecto específico. Preguntas que funcionan: "¿En qué debo parar, avanzar y ser cuidadoso/a en [área / proyecto / relación]?", "¿Qué señales de semáforo tengo en mi vida ahora mismo?", "En este momento, ¿qué necesita freno, qué necesita impulso y qué necesita precaución?". Puede aplicarse a cualquier área: trabajo, amor, salud, finanzas, proyectos creativos.',
+    interpretationContext: `Tirada basada en la metáfora del semáforo — tres señales de acción distintas y complementarias.\n• Posición 1 — LUZ ROJA / PARAR (izquierda): lo que debe DETENERSE, pausarse o interrumpirse. Puede ser una acción, un hábito, una forma de relacionarse, un proyecto que no va en la dirección correcta. No siempre es permanente — puede ser una pausa necesaria antes de continuar. La carta describe QUÉ parar y a veces POR QUÉ es necesario ese freno.\n• Posición 2 — LUZ VERDE / AVANZAR (centro): lo que tiene "luz verde" y puede expresarse con confianza. En qué seguir adelante, empezar o acelerar. La energía que está lista para moverse. La carta muestra el área de vida o la cualidad que necesita impulso activo ahora mismo.\n• Posición 3 — LUZ AMARILLA / PRECAUCIÓN (derecha): el área donde hay que proceder con más cuidado, reducir el ritmo o prestar más atención antes de actuar. No es un STOP — es "avanza, pero con consciencia". Señala dónde la impulsividad o el exceso puede crear problemas inesperados.\nLas tres cartas juntas crean un mapa de navegación completo para el área consultada.`,
+    positions: [
+      { num: 1, label: 'Luz Roja · Lo que Debes Parar o Pausar', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'Luz Verde · Lo que Debes Avanzar', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'Luz Amarilla · Donde Ir con Precaución', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 14 ─ Situación – Desafío – Resolución
+  {
+    id: 'col3_situacion_desafio',
+    category: 'tres_col',
+    name: 'Situación · Desafío · Resolución',
+    subtitle: 'Tres cartas · Diagnóstico y solución general',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '◇',
+    guide: 'Coloca las tres cartas en fila: Situación (izquierda), Desafío (centro), Resolución (derecha).',
+    description: 'Tirada de propósito general que puede aplicarse a prácticamente cualquier área de la vida. Diagnostica la situación actual, identifica los desafíos u obstáculos presentes o por venir y sugiere el enfoque más favorable para resolverlos. Es una lectura completa en solo tres cartas.',
+    whenToUse: 'Para cualquier situación cotidiana o importante donde quieras claridad rápida y completa. Esta es la tirada más versátil y polivalente de la colección. Preguntas que funcionan: "¿Cuál es mi situación en [área], qué desafío enfrento y cómo resolverlo?", "¿Qué pasa con [tema] y qué puedo hacer?", "¿Cómo está [relación / trabajo / proyecto] y qué necesito saber?". Funciona para amor, trabajo, salud, familia, finanzas o cualquier tema de vida.',
+    interpretationContext: `Tirada de propósito general — la más versátil y polivalente de las tres cartas.\n• Posición 1 — LA SITUACIÓN (izquierda): descripción objetiva y profunda de la situación actual tal como está realmente. La energía del momento presente en relación al tema consultado. No lo que el consultante cree que está pasando — lo que el tarot muestra que está realmente sucediendo.\n• Posición 2 — EL DESAFÍO (centro): los retos, obstáculos o complicaciones que están presentes o que se avecinan. Puede ser externo (personas, circunstancias fuera del control del consultante) o interno (miedo, resistencia, patrón propio). La carta muestra QUÉ hay que superar o gestionar.\n• Posición 3 — LA RESOLUCIÓN (derecha): el enfoque, actitud o acción más favorable para resolver o mejorar el desafío y la situación. No es garantía de resultado — es la dirección más disponible y eficaz ahora mismo. Puede ser una acción concreta, un cambio de perspectiva o un recurso interno a activar.\nLectura integrada: ¿la resolución (3) responde directamente al desafío (2) y tiene coherencia con la situación (1)? Si hay tensión entre las tres cartas, señala la complejidad del reto.`,
+    positions: [
+      { num: 1, label: 'La Situación · El Estado Actual Real', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'El Desafío · El Obstáculo a Superar', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'La Resolución · El Enfoque Favorable', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 15 ─ Situación – Lección – Consejo
+  {
+    id: 'col3_situacion_leccion',
+    category: 'tres_col',
+    name: 'Situación · Lección · Consejo',
+    subtitle: 'Tres cartas · Aprendizaje y orientación',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '◉',
+    guide: 'Coloca las tres cartas en fila: Situación (izquierda), Lección (centro), Consejo (derecha).',
+    description: 'Variante de la tirada anterior con un giro esencial: en vez de buscar la resolución del problema, se busca la lección que la situación enseña. El foco cambia de "cómo salgo de esto" a "qué estoy aquí para aprender". El Consejo orienta hacia la acción más alineada con ese aprendizaje.',
+    whenToUse: 'Para situaciones difíciles o repetitivas donde hay un patrón que aprender. Especialmente valiosa cuando una situación se repite. Preguntas que funcionan: "¿Qué puedo aprender de [situación difícil]?", "¿Cuál es la lección de fondo en [problema que se repite]?", "¿Qué me está enseñando esta experiencia y qué consejo me da el tarot?". La diferencia con la tirada 14 es el FOCO: aquí importa el aprendizaje, no la solución.',
+    interpretationContext: `Tirada con foco en el aprendizaje y el crecimiento más que en la solución inmediata — diferente de "Situación-Desafío-Resolución".\n• Posición 1 — LA SITUACIÓN (izquierda): descripción objetiva de la situación actual tal como está. El punto de partida real. Lo que está pasando sin filtros ni proyecciones.\n• Posición 2 — LA LECCIÓN (centro): el aprendizaje o enseñanza que esta situación específica contiene para el consultante. No "qué hago" sino "qué aprendo". A veces es una lección sobre uno mismo, otras sobre las relaciones o sobre el mundo. La carta señala el TEMA DE CRECIMIENTO CENTRAL que esta experiencia está ofreciendo. Es el corazón de esta tirada.\n• Posición 3 — EL CONSEJO (derecha): la acción o enfoque más alineado con esa lección. No es una solución al problema (como en la tirada 14) sino una orientación práctica que ayuda a integrar el aprendizaje mientras se navega la situación. El "qué hacer con esto que estoy aprendiendo".\nDiferencia clave con "Situación-Desafío-Resolución" (tirada 14): aquí el foco es APRENDER y CRECER, no resolver. Ambas pueden hacerse sobre la misma situación para obtener perspectivas complementarias.`,
+    positions: [
+      { num: 1, label: 'La Situación · Lo que Está Pasando', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'La Lección · Lo que Puedes Aprender', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'El Consejo · La Acción Alineada', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 16 ─ Fortalezas – Debilidades – Consejos
+  {
+    id: 'col3_fortalezas',
+    category: 'tres_col',
+    name: 'Fortalezas · Debilidades · Consejo',
+    subtitle: 'Tres cartas · Autoevaluación y dirección',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '⌖',
+    guide: 'Coloca las tres cartas en fila: Fortalezas (izquierda), Debilidades (centro), Consejo (derecha).',
+    description: 'Autoevaluación honesta de fortalezas, debilidades y orientación. La primera carta destaca lo que tienes a favor; la segunda señala con honestidad lo que te limita; la tercera orienta sobre cómo aprovechar las fortalezas y trabajar las debilidades. Ideal para diarios de tarot o evaluaciones periódicas.',
+    whenToUse: 'Para autoevaluaciones periódicas, inicio de proyectos o cuando quieres un diagnóstico honesto de dónde estás. Excelente para escribir en un diario después de la lectura. Preguntas que funcionan: "¿Cuáles son mis fortalezas, debilidades y qué consejo tengo para este momento?", "¿Qué tengo a favor y en contra en [proyecto / relación / área] y qué debo hacer?", "¿Qué fortalezas puedo aprovechar y qué debilidades trabajar en [tema]?".',
+    interpretationContext: `Tirada de autoevaluación honesta — especialmente valiosa cuando se complementa con escritura de diario.\n• Posición 1 — FORTALEZAS (izquierda): las cualidades, recursos, capacidades y apoyos que el consultante tiene a su favor en este momento. Lo que está funcionando bien. La carta puede revelar fortalezas que el consultante subestima o no reconoce plenamente en sí mismo — señalarlas explícitamente es parte del valor de esta posición.\n• Posición 2 — DEBILIDADES (centro): los puntos de vulnerabilidad, limitaciones, hábitos que no ayudan o áreas de mejora. Ser honesto aquí es fundamental — esta posición no juzga, informa. Una carta difícil es información valiosa, no un ataque. Puede revelar vulnerabilidades inconscientes o puntos ciegos.\n• Posición 3 — EL CONSEJO (derecha): la orientación práctica del tarot sobre cómo usar las fortalezas (1) para compensar o trabajar las debilidades (2) y avanzar hacia el objetivo. Puede sugerir un enfoque específico, un recurso a activar o un paso concreto a dar.\nLectura integrada: las fortalezas y debilidades se leen JUNTAS — el consejo (3) frecuentemente conecta ambas: "usando [fortaleza] puedes superar [debilidad]". El trio completo forma un plan de acción realista.`,
+    positions: [
+      { num: 1, label: 'Fortalezas · Lo que Tienes a Favor', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'Debilidades · Lo que Te Limita', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'El Consejo · La Orientación del Tarot', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 17 ─ Opción 1 – Opción 2 – Cómo elegir
+  {
+    id: 'col3_opcion1_opcion2',
+    category: 'tres_col',
+    name: 'Opción 1 · Opción 2 · Cómo Elegir',
+    subtitle: 'Tres cartas · Decisión entre dos caminos',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '⬡',
+    guide: 'Antes de barajar, define con claridad en tu mente las dos opciones (no las digas en voz alta). Coloca las tres cartas en fila: Opción 1 (izquierda), Opción 2 (centro), Cómo Elegir (derecha).',
+    description: 'Tirada para obtener perspectiva sobre una decisión difícil con dos alternativas claras. Las dos primeras cartas describen la energía y naturaleza de cada opción. La tercera no dice qué elegir — orienta sobre el proceso de decisión: qué necesitas para poder elegir con claridad y consciencia.',
+    whenToUse: 'Cuando estás ante una decisión real con DOS opciones concretas y bien definidas. Preguntas que funcionan: "Tengo que elegir entre [trabajo A] y [trabajo B] — ¿qué me dice el tarot de cada uno?", "¿Debo quedarme o irme?", "¿Elijo [opción A] o [opción B]?". IMPORTANTE: las dos opciones deben estar bien definidas en tu mente antes de barajar. El tarot no dice qué elegir — ilumina qué TIPO de experiencia trae cada opción y qué necesitas para poder decidir bien.',
+    interpretationContext: `Tirada de perspectiva para decisiones entre dos opciones concretas ya identificadas por el consultante.\n• Posición 1 — OPCIÓN 1 (izquierda): la energía, naturaleza y vibración del primer camino posible. La carta no dice si es "mejor" o "peor" — describe QUÉ TIPO de experiencia trae consigo esta opción. ¿Qué cualidad energética tiene este camino? ¿Qué tipo de vida o experiencia implica?\n• Posición 2 — OPCIÓN 2 (centro): la energía, naturaleza y vibración del segundo camino posible. Comparar con la posición 1: ¿cómo se siente diferente esta opción? ¿Qué tipo de experiencia distinta ofrece? ¿Con qué energía viene cargada?\n• Posición 3 — CÓMO ELEGIR (derecha): ATENCIÓN — esta carta NO dice qué opción elegir. Señala lo que el consultante NECESITA para poder tomar la decisión: puede ser información que le falta, una cualidad interna a activar, un proceso interior a completar, tiempo adicional o simplemente claridad sobre sus propios valores. A veces la decisión ya está tomada inconscientemente y la carta lo confirma.\nNota esencial: la decisión siempre es del consultante. El tarot ofrece perspectiva, no veredicto.`,
+    positions: [
+      { num: 1, label: 'Opción 1 · Su Energía y Naturaleza', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'Opción 2 · Su Energía y Naturaleza', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'Cómo Elegir · Lo que Necesitas Para Decidir', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 18 ─ Tú – Camino – Potencial
+  {
+    id: 'col3_tu_camino',
+    category: 'tres_col',
+    name: 'Tú · El Camino · El Potencial',
+    subtitle: 'Tres cartas · Situación, dirección y resultado',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '▷',
+    guide: 'Coloca las tres cartas en fila: Tú (izquierda), El Camino (centro), El Potencial / Resultado (derecha).',
+    description: 'Tirada para evaluar un camino concreto que el consultante está considerando tomar. La primera carta muestra su situación y disposición actual; la segunda describe el camino específico que considera; la tercera sugiere el potencial o resultado de seguirlo.',
+    whenToUse: 'Para evaluar un camino o dirección específica que estás pensando tomar. Preguntas que funcionan: "¿Cómo estoy yo, cómo es el camino de [estudiar / emprender / mudarme / comenzar esta relación] y cuál es su potencial?", "¿Debería seguir el camino de [X] y qué resultado tendría?", "¿Qué muestra el tarot de mí, del camino que considero y de su potencial?". El "camino" debe ser algo específico y concreto.',
+    interpretationContext: `Tirada de evaluación de un camino o dirección específica que el consultante está considerando.\n• Posición 1 — TÚ (izquierda): cómo está el consultante ahora mismo — su energía, estado emocional, fortalezas y disposición en relación al camino que considera. ¿Está preparado/a? ¿Cómo se siente ante esta posibilidad? ¿Con qué recursos cuenta para emprender este camino?\n• Posición 2 — EL CAMINO (centro): la naturaleza, energía y características del camino específico que el consultante considera. No lo que va a "encontrar" en ese camino, sino QUÉ TIPO de experiencia ES ese camino en sí mismo. ¿Es un camino arduo o fluido? ¿Requiere esfuerzo intenso o viene con facilidad? ¿Qué lo define?\n• Posición 3 — EL POTENCIAL / RESULTADO (derecha): el resultado o potencial más probable de seguir ese camino. Lo que el camino puede ofrecer o a dónde puede llevar. No es garantía — es el potencial disponible si el consultante avanza por él.\nAnálisis integrado: ¿hay alineación entre quién eres (1) y el tipo de camino (2)? ¿El potencial (3) es lo que realmente buscas? La tensión o armonía entre las tres cartas revela si este es el camino correcto ahora.`,
+    positions: [
+      { num: 1, label: 'Tú · Tu Situación y Disposición Actual', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'El Camino · La Dirección que Consideras', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'El Potencial · El Resultado Posible', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 19 ─ Detener – Iniciar – Continuar
+  {
+    id: 'col3_detener_iniciar',
+    category: 'tres_col',
+    name: 'Detener · Iniciar · Continuar',
+    subtitle: 'Tres cartas · Evaluación y acción',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '⊳',
+    guide: 'Coloca las tres cartas en fila: Detener (izquierda), Iniciar (centro), Continuar (derecha).',
+    description: 'Plantilla de evaluación directa de una área de vida o situación. Clarifica qué dejar de hacer, qué empezar a hacer y qué ya está funcionando bien y merece mantenerse. Sencilla pero poderosa para tomar decisiones sobre comportamientos, hábitos o patrones de vida.',
+    whenToUse: 'Para revisiones periódicas de hábitos, trabajo, relaciones o cualquier área de vida. Preguntas que funcionan: "¿Qué debo parar, empezar y continuar en [trabajo / relación / hábitos / vida]?", "Revisando [área de mi vida], ¿qué funciona, qué no y qué falta?", "¿Qué debo cambiar y qué preservar en este momento?". Variante de la tirada del semáforo (13) con foco más en conductas y hábitos concretos que en áreas generales.',
+    interpretationContext: `Plantilla de evaluación conductual para cualquier área de vida — orientada a comportamientos y hábitos.\n• Posición 1 — DETENER (izquierda): lo que el consultante necesita dejar de hacer. Puede ser un comportamiento, hábito, patrón mental, forma de relacionarse o actividad que ya no sirve o que está causando daño o estancamiento. Incluye malos hábitos, patrones destructivos o simplemente cosas que ya cumplieron su ciclo.\n• Posición 2 — INICIAR (centro): lo que el consultante necesita EMPEZAR a hacer para avanzar al siguiente nivel. Una nueva práctica, hábito, actitud o tipo de acción que está faltando y cuya ausencia está limitando el crecimiento, bienestar o éxito en el área consultada.\n• Posición 3 — CONTINUAR (derecha): lo que ya está haciendo bien y debe mantenerse. Sus fortalezas activas, las decisiones correctas ya tomadas, los hábitos o actitudes que están funcionando y que merecen ser reconocidos y conservados conscientemente.\nLectura integrada: las tres posiciones forman un plan de acción completo — qué soltar, qué añadir y qué cuidar. Leer las tres juntas para obtener la imagen completa del camino de mejora.`,
+    positions: [
+      { num: 1, label: 'Detener · Lo que Debes Dejar de Hacer', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'Iniciar · Lo que Debes Empezar', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'Continuar · Lo que Está Funcionando', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 20 ─ Lo que tú quieres – Lo que elles quieren – Dirección
+  {
+    id: 'col3_lo_que_quieres',
+    category: 'tres_col',
+    name: 'Lo que Tú Quieres · Lo que Elles Quieren · Dirección',
+    subtitle: 'Tres cartas · Relaciones y deseos en conflicto',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '⊕',
+    guide: 'Coloca las tres cartas en fila: Lo que Tú Quieres (izquierda), Lo que La Otra Persona Quiere (centro), La Dirección de la Relación (derecha).',
+    description: 'Tirada para relaciones donde tú y la otra persona no están en el mismo punto o no se ponen de acuerdo. Revela los deseos y necesidades de cada parte y hacia dónde se dirige la relación dada esta dinámica. Puede hacerse con la otra persona para abrir un diálogo más honesto.',
+    whenToUse: 'Para relaciones románticas, amistades o vínculos profesionales donde hay desacuerdo o tensión. Preguntas que funcionan: "¿Qué quiero yo, qué quiere [persona] y hacia dónde va nuestra relación?", "¿Por qué no nos ponemos de acuerdo sobre [tema]?", "¿Qué necesitamos cada uno y cómo podemos avanzar juntos?". Puede hacerse CON la otra persona como herramienta de comunicación profunda — cada uno interpreta cómo ve su propia posición y luego comparten.',
+    interpretationContext: `Tirada de análisis relacional con foco en los deseos individuales y la dirección del vínculo.\n• Posición 1 — LO QUE TÚ QUIERES (izquierda): los deseos, necesidades y expectativas del consultante en la relación. Lo que realmente quiere de este vínculo, incluyendo lo que quizás no ha expresado en voz alta. La carta puede revelar un deseo más profundo o inconsciente que el consultante mismo no había reconocido.\n• Posición 2 — LO QUE LA OTRA PERSONA QUIERE (centro): los deseos, necesidades y expectativas de la otra persona. Interpretar con perspectiva y empatía — no como crítica sino como comprensión. La carta revela qué busca la otra persona en esta relación desde su propia lógica y necesidades.\n• Posición 3 — LA DIRECCIÓN DE LA RELACIÓN (derecha): hacia dónde se dirige el vínculo dada la dinámica de los dos deseos. Puede ser convergente (se acercan), divergente (se alejan), o indicar la necesidad de un compromiso. La carta no dicta el futuro — muestra la TENDENCIA ACTUAL basada en los deseos de ambas partes.\nSi se hace con la otra persona: compartir la interpretación de cada carta puede abrir una conversación más honesta y profunda.`,
+    positions: [
+      { num: 1, label: 'Lo que Tú Quieres en la Relación', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'Lo que La Otra Persona Quiere', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'La Dirección · Hacia Dónde Va el Vínculo', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 21 ─ ¿Qué los une? – ¿Qué los separa? – ¿Qué necesita atención?
+  {
+    id: 'col3_union_separacion',
+    category: 'tres_col',
+    name: '¿Qué los Une? · ¿Qué los Separa? · ¿Qué Necesita Atención?',
+    subtitle: 'Tres cartas · Revisión profunda de un vínculo',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '⊗',
+    guide: 'Coloca las tres cartas en fila: ¿Qué los Une? (izquierda), ¿Qué los Separa? (centro), ¿Qué Necesita Atención? (derecha).',
+    description: 'Revisión relacional que identifica la base del vínculo, los factores de distancia o tensión y lo que necesita cuidado o trabajo. Puede hacerse sobre cualquier tipo de relación y funciona especialmente bien si se hace con la otra persona presente.',
+    whenToUse: 'Para revisar el estado real de una relación importante: pareja, amistad, familia o colega. Preguntas que funcionan: "¿Qué nos une, qué nos separa y qué necesita atención en mi relación con [persona]?", "¿Cuál es el estado real de esta relación?", "¿Qué tenemos en común, qué nos distancia y qué debemos trabajar juntos?". Puede hacerse CON la otra persona como ejercicio de comunicación. También sirve para evaluar si una relación tiene futuro o qué necesita para mejorar.',
+    interpretationContext: `Tirada de revisión relacional con tres preguntas clave sobre el estado del vínculo entre dos personas.\n• Posición 1 — ¿QUÉ LOS UNE? (izquierda): la base, el pegamento y los elementos que sostienen la conexión. Los puntos de encuentro, valores compartidos, historia común o simplemente la energía que hace que este vínculo exista y continúe. Una carta fuerte aquí indica una base sólida y genuina.\n• Posición 2 — ¿QUÉ LOS SEPARA? (centro): los factores de distancia, tensión o desconexión activos en este vínculo. Puede ser una diferencia de valores o necesidades, falta de comunicación, heridas no sanadas, o simplemente el crecimiento en direcciones distintas. Esta posición requiere honestidad — suavizar aquí priva al consultante de información valiosa.\n• Posición 3 — ¿QUÉ NECESITA ATENCIÓN? (derecha): el área específica de la relación que necesita ser cuidada, trabajada o reconocida PRIMERO. Puede señalar algo positivo que no se está aprovechando o un problema que pide atención urgente. Es el consejo práctico: dónde enfocar la energía.\nSi se hace con la otra persona: cada uno interpreta cómo ve cada posición y luego comparte — la comparación revela perspectivas valiosas.`,
+    positions: [
+      { num: 1, label: '¿Qué los Une? · La Base del Vínculo', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: '¿Qué los Separa? · La Distancia', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: '¿Qué Necesita Atención? · El Foco', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 22 ─ Dónde estás – Dónde quieres estar – Cómo llegar
+  {
+    id: 'col3_donde_ahora',
+    category: 'tres_col',
+    name: 'Dónde Estás · Dónde Quieres Estar · Cómo Llegar',
+    subtitle: 'Tres cartas · Del presente al sueño',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '⊹',
+    guide: 'Coloca las tres cartas en fila: Dónde Estás Ahora (izquierda), Dónde Quieres Estar (centro), Cómo Llegar Allí (derecha).',
+    description: 'Tirada de navegación para personas con metas y sueños. Muestra el estado actual honesto, el objetivo o destino deseado y el camino que conecta ambos. Sin importar cuán lejos esté el destino, siempre hay un próximo paso posible — y esta tirada lo señala.',
+    whenToUse: 'Para personas con metas claras o sueños que quieren materializar. Preguntas que funcionan: "¿Cómo estoy ahora, dónde quiero estar en [trabajo / vida / salud / relación] y cómo llego allí?", "¿Cuál es el camino desde donde estoy hasta [meta específica]?", "¿Qué me dice el tarot sobre el camino hacia [sueño / objetivo]?". El consultante debe tener una idea concreta de "dónde quiere estar" — esta tirada no funciona bien con metas vagas o no definidas.',
+    interpretationContext: `Tirada de navegación desde el estado presente hacia el objetivo deseado — para soñadores con metas concretas.\n• Posición 1 — DÓNDE ESTÁS AHORA (izquierda): la situación actual real del consultante en el área consultada. El punto de partida honesto — no dónde quisiera estar, sino dónde realmente está. La carta puede revelar aspectos de la situación actual que el consultante no ve claramente, incluyendo recursos disponibles que no está usando.\n• Posición 2 — DÓNDE QUIERES ESTAR (centro): el objetivo, sueño o destino que el consultante tiene en mente. La carta puede confirmar que ese destino está disponible y alineado, matizarlo (sugiriendo que el verdadero objetivo puede ser diferente del declarado), o revelar la naturaleza real de lo que desea. Habla del DESTINO, no del camino.\n• Posición 3 — CÓMO LLEGAR ALLÍ (derecha): el camino, los pasos o la estrategia clave para ir del punto 1 al punto 2. Puede ser una acción concreta, una cualidad a desarrollar, un recurso a activar o una transformación interna necesaria. El primer paso más importante o la dirección general del viaje.\nLa distancia simbólica entre las cartas 1 y 2 revela cuánto recorrido hay. La carta 3 es la brújula — el próximo paso más importante.`,
+    positions: [
+      { num: 1, label: 'Dónde Estás Ahora · El Punto de Partida', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'Dónde Quieres Estar · El Destino', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'Cómo Llegar Allí · El Camino y el Paso Clave', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 23 ─ Lo que se siembra – Lo que crece – Lo que se cosecha
+  {
+    id: 'col3_siembra',
+    category: 'tres_col',
+    name: 'Lo que se Siembra · Lo que Crece · Lo que se Cosecha',
+    subtitle: 'Tres cartas · Ciclo de crecimiento y logros',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '∞',
+    guide: 'Coloca las tres cartas en fila: Lo que se Siembra (izquierda), Lo que Crece (centro), Lo que se Cosecha (derecha).',
+    description: 'Tirada basada en la metáfora del ciclo agrícola. Revela en qué se está trabajando e invirtiendo energía ahora (la siembra), qué está emergiendo y desarrollándose (el crecimiento) y qué ya está listo para ser reconocido y celebrado como logro (la cosecha). Ideal para reflexionar sobre procesos y metas en desarrollo.',
+    whenToUse: 'Para reflexionar sobre proyectos o metas en proceso. Especialmente útil cuando estás en medio de un proceso largo y quieres entender en qué etapa del ciclo estás. Preguntas que funcionan: "¿Qué estoy sembrando, qué está creciendo y qué puedo cosechar en [proyecto / vida / relación]?", "¿Cómo va mi proceso hacia [meta]?", "¿Qué logros ya tengo listos aunque no los vea?". No es para resultados inmediatos — es para procesos en curso con perspectiva.',
+    interpretationContext: `Tirada del ciclo de crecimiento con metáfora agrícola — proceso, desarrollo y cosecha de frutos.\n• Posición 1 — LO QUE SE SIEMBRA (izquierda): lo que el consultante está trabajando, cultivando o invirtiendo energía en este momento. Las semillas que está plantando — acciones actuales, esfuerzos presentes, intenciones activas. No el resultado todavía — la siembra activa. ¿En qué está poniendo energía ahora?\n• Posición 2 — LO QUE CRECE (centro): lo que ya está en proceso de desarrollo, emergiendo y tomando forma. Los brotes visibles del esfuerzo. Puede ser un talento que se desarrolla, una relación que madura, un proyecto que avanza o una comprensión que se expande. Está en proceso — no es resultado final todavía.\n• Posición 3 — LO QUE SE COSECHA (derecha): las áreas donde el consultante ya está obteniendo resultados, logrando metas o disfrutando los frutos de esfuerzos anteriores. Lo que ya llegó a madurez. IMPORTANTE: esta posición puede revelar logros que el consultante no está reconociendo suficientemente — señalarlos explícitamente.\nAnálisis del ciclo: ¿qué parte del ciclo domina en la vida del consultante ahora? ¿Hay algo que ya debería cosecharse pero se sigue tratando como siembra?`,
+    positions: [
+      { num: 1, label: 'Lo que se Siembra · Tu Esfuerzo Activo Ahora', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'Lo que Crece · Lo que se Está Desarrollando', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'Lo que se Cosecha · Los Logros Ya Listos', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 24 ─ Tú – La Tormenta – Cómo superarla
+  {
+    id: 'col3_tormenta',
+    category: 'tres_col',
+    name: 'Tú · La Tormenta · Cómo Superarla',
+    subtitle: 'Tres cartas · Navegar momentos difíciles',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '☾',
+    guide: 'Coloca las tres cartas en fila: Tú (izquierda), La Tormenta (centro), Cómo Superarla (derecha).',
+    description: 'Tirada de apoyo para momentos difíciles, crisis o períodos de adversidad. La primera carta refleja la situación o estado actual del consultante; la segunda describe la naturaleza de la tormenta que está viviendo; la tercera sugiere cómo navegar el temporal y salir más fortalecido del otro lado.',
+    whenToUse: 'Para cuando se está atravesando un momento difícil, una crisis, una pérdida, un conflicto importante o estrés intenso. Preguntas que funcionan: "Estoy pasando por [momento difícil] — ¿cómo puedo superarlo?", "¿Cómo estoy yo, qué tormenta estoy viviendo y cómo salir de esto?", "¿Cómo navegar esta crisis con [trabajo / relación / salud / familia]?". También sirve cuando la "tormenta" no está definida claramente — la segunda carta puede revelar la naturaleza real del problema.',
+    interpretationContext: `Tirada de apoyo y orientación para momentos de adversidad y crisis — tono compasivo y empoderador.\n• Posición 1 — TÚ (izquierda): la situación actual, estado emocional y circunstancias del consultante. Cómo está ahora mismo — su fortaleza disponible, su vulnerabilidad presente y su posición ante el desafío. Puede reflejar sentimientos internos o simplemente ser una instantánea objetiva de sus circunstancias actuales.\n• Posición 2 — LA TORMENTA (centro): lo que está sucediendo o podría suceder — el trastorno, el revés, la crisis o situación estresante en cuestión. Si el consultante ya sabe cuál es la tormenta, la carta la confirma o la matiza con mayor profundidad. Si no tiene claro de qué se trata el problema de fondo, la carta puede revelar la naturaleza real y el origen de la tormenta.\n• Posición 3 — CÓMO SUPERARLA (derecha): la acción, actitud, recurso o enfoque para capear el temporal y salir de él en mejor posición que la actual. No promete que la tormenta terminará pronto — sugiere cómo navegarla con mayor sabiduría, fortaleza y gracia. El camino a través, no alrededor.\nTono de la lectura: compasivo, honesto y empoderador. No minimizar la dificultad — sino destacar la capacidad del consultante de atravesarla y salir transformado.`,
+    positions: [
+      { num: 1, label: 'Tú · Tu Situación y Estado Actual', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda de la fila' },
+      { num: 2, label: 'La Tormenta · Lo que Estás Atravesando', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la fila' },
+      { num: 3, label: 'Cómo Superarla · El Camino a Través', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha de la fila' },
+    ],
+  },
+
+  // 25 ─ Manifestación con El Mago (tirada especial)
+  {
+    id: 'col3_mago_manifestacion',
+    category: 'tres_col',
+    name: 'Manifestación con El Mago',
+    subtitle: 'Tres cartas · El Mago como ancla sagrada',
+    origin: 'Práctica Tarotista Contemporánea',
+    cards: 3,
+    icon: '✶',
+    guide: 'RITUAL ESPECIAL — Sigue estos pasos con precisión: (1) Busca conscientemente "El Mago" en tu mazo y colócalo boca arriba en el CENTRO de la mesa — es una carta elegida intencionalmente, NO al azar. (2) Baraja el resto del mazo mientras tienes en mente tu intención de manifestación concreta. (3) Saca una carta al azar y colócala a la IZQUIERDA del Mago (el bloqueo). (4) Saca otra carta al azar y colócala a la DERECHA del Mago (el apoyo).',
+    description: 'Tirada única de manifestación donde El Mago (Arcano I) se coloca conscientemente en el centro como figura de poder y voluntad. Las dos cartas extraídas al azar revelan qué bloquea y qué apoya el proceso de manifestación del deseo. La presencia del Mago recuerda que tienes todas las herramientas — la pregunta es cómo usarlas.',
+    whenToUse: 'Para trabajar conscientemente en manifestar algo específico en tu vida. REQUISITO: tu intención debe ser ESPECÍFICA y CONCRETA antes de comenzar — "quiero abundancia" es demasiado vago; "quiero manifestar [trabajo específico / relación / proyecto / situación concreta]" es lo que necesita esta tirada. Cuanto más clara y precisa sea la intención formulada mentalmente antes de barajar, más potente y relevante será la lectura. No usar para preguntas generales.',
+    interpretationContext: `Tirada especial de manifestación. La posición 2 NO es una carta aleatoria — es SIEMPRE El Mago (Arcano Mayor I) elegido conscientemente del mazo. Solo las posiciones 1 y 3 son cartas extraídas al azar.\n• Posición 1 — EL BLOQUEO (izquierda — carta al azar): lo que está impidiendo, frenando o saboteando el proceso de manifestación del deseo específico formulado por el consultante. Puede ser un miedo inconsciente, una creencia limitante, un comportamiento saboteador o una circunstancia que actúa como obstáculo. La carta revela con qué exactamente debe trabajar el consultante para despejar el camino hacia su intención.\n• Posición 2 — EL MAGO (centro — CARTA FIJA, siempre El Mago Arcano I): el consultante eligió conscientemente esta carta del mazo y la colocó en el centro. Su presencia no se interpreta como carta ordinaria — ES el mensaje en sí: "Tienes acceso a todas las herramientas necesarias (varita = voluntad, copa = emoción, espada = mente, pentáculo = materia). El poder de manifestar está en ti." El Mago es el CATALIZADOR — el puente entre el cielo y la tierra, entre la intención y la realidad.\n• Posición 3 — EL APOYO (derecha — carta al azar): lo que puede ayudar, facilitar o potenciar el proceso de manifestación. Un recurso disponible, una fortaleza a activar, una acción concreta a tomar, o una persona o circunstancia que apoya el deseo formulado.\nInterpretación siempre en relación al deseo específico: el bloqueo (1) y el apoyo (3) se interpretan SIEMPRE en función de la intención concreta que el consultante formuló antes de la tirada. Sin conocer la intención específica, la lectura pierde precisión.`,
+    positions: [
+      { num: 1, label: 'El Bloqueo · Lo que Impide la Manifestación', x: 20, y: 50, w: 16, h: 25,
+        placement: 'Izquierda del Mago — carta extraída al azar' },
+      { num: 2, label: 'El Mago · El Poder de Manifestar (carta fija)', x: 50, y: 50, w: 16, h: 25,
+        placement: 'Centro de la mesa — El Mago elegido conscientemente, no al azar' },
+      { num: 3, label: 'El Apoyo · Lo que Ayuda a Manifestar', x: 80, y: 50, w: 16, h: 25,
+        placement: 'Derecha del Mago — carta extraída al azar' },
+    ],
+  },
 
   // ═══════════════════════════════════════════════════════════════════════════
   //  MÉTODO FIEBIG · BÜRGER — "Tarot de A.E. Waite" (Johannes Fiebig & Evelin Bürger)
